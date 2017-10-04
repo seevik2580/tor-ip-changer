@@ -8,6 +8,7 @@ install dependency:
 
 usage:  
 `chmod +x ipchanger`
+
 `tor -f torrc`
 
 ### change ip every 10 seconds
