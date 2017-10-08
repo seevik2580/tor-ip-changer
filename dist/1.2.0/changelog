@@ -1,20 +1,19 @@
-orange;Changelog: v1.2.0
-orange;Added:   Argument '-a n' '--auto n'
-orange;         automaticaly change ip after start every n
-orange;         example:   ipchanger.exe -a 35
-orange;                    change ip auto every 35 sec
-orange;
-orange;Added:   Progress bar indicator
-orange;Fixed:   Socket unexpected timeout
-orange;Fixed:   TOR switcher crashed after while
-orange;Changed: Better logging
-orange;Changed: Start TOR timeout to 120 seconds
-orange;Removed: Configure browser button
-orange;  
-orange;Usage:   click Start TOR, set your proxy to
-orange;         SOCKS5 127.0.0.1:9050 and click Change IP
-orange;
-orange;         Iam not responsible for any causalities or whatever
-orange;         In case of any problems, send logs to
-yellow;         toripchanger@gmail.com
-yellow;
+Changelog: v1.2.0
+Added:   Argument '-a n' '--auto n'
+         automaticaly change ip after start every n
+         example:   ipchanger.exe -a 35
+                    change ip auto every 35 sec
+
+Added:   Progress bar indicator
+Fixed:   Socket unexpected timeout
+Fixed:   TOR switcher crashed after while
+Changed: Better logging
+Changed: Start TOR timeout to 120 seconds
+Removed: Configure browser button
+  
+Usage:   click Start TOR, set your proxy to
+         SOCKS5 127.0.0.1:9050 and click Change IP
+
+         Iam not responsible for any causalities or whatever
+         In case of any problems, send logs to
+         toripchanger@gmail.com
