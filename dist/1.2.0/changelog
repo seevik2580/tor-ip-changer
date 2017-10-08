@@ -1,0 +1,22 @@
+orange ; Changelog: v 1.2.0
+orange ;         Added:   Better logging
+orange ;         Added:   Show log button
+orange ;         Changed: Every failed request has 3 attempts now
+orange ;         Changed: Requesting new identity and fetching ip
+orange ;                  was separated
+orange ;         Added:   Argument '-a n' '--auto n'
+orange ;                  automaticaly change ip after start every n
+orange ;                  example:   ipchanger.exe -a 35
+orange ;                  change ip auto every 35 sec
+orange ;         Fixed:   Socket unexpected timeout
+orange ;         Fixed:   TOR switcher crashed after while
+orange ;         Changed: Start TOR timeout to 120 seconds
+orange ;         Interval:   time to new identity request
+orange ;         Timeout:    time to finish identity request
+orange ;         Usage:   click Start TOR, set your proxy to
+orange ;                  SOCKS5 127.0.0.1:9050 and click Change IP
+orange ;                  Configure browser proxy button is experimental!
+orange ;                  Iam not responsible for any causalities or
+orange ;                  whatever
+orange ;                  In case of any problems, send logs to
+yellow ;                  toripchanger@gmail.com
