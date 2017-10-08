@@ -8,14 +8,15 @@ orange ;         Added:   Argument '-a n' '--auto n'
 orange ;                  automaticaly change ip after start every n
 orange ;                  example:   ipchanger.exe -a 35
 orange ;                  change ip auto every 35 sec
+orange ;         Added:   Progress bar indicator
 orange ;         Fixed:   Socket unexpected timeout
 orange ;         Fixed:   TOR switcher crashed after while
 orange ;         Changed: Start TOR timeout to 120 seconds
-orange ;         Interval:   time to new identity request
-orange ;         Timeout:    time to finish identity request
+orange ;         Removed: Configure browser button
+
 orange ;         Usage:   click Start TOR, set your proxy to
 orange ;                  SOCKS5 127.0.0.1:9050 and click Change IP
-orange ;                  Configure browser proxy button is experimental!
+
 orange ;                  Iam not responsible for any causalities or
 orange ;                  whatever
 orange ;                  In case of any problems, send logs to
