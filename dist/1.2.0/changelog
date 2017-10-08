@@ -1,15 +1,13 @@
 orange ; Changelog: v 1.2.0
-orange ; Added:   Better logging
-orange ; Added:   Show log button
-orange ; Changed: Every failed request has 3 attempts now
-orange ; Changed: Requesting new identity and fetching ip was separated
 orange ; Added:   Argument '-a n' '--auto n'
 orange ;          automaticaly change ip after start every n
 orange ;          example:   ipchanger.exe -a 35
 orange ;                     change ip auto every 35 sec
+
 orange ; Added:   Progress bar indicator
 orange ; Fixed:   Socket unexpected timeout
 orange ; Fixed:   TOR switcher crashed after while
+orange ; Changed: Better logging
 orange ; Changed: Start TOR timeout to 120 seconds
 orange ; Removed: Configure browser button
 
