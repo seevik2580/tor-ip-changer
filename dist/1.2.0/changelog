@@ -1,19 +1,32 @@
 Changelog: v1.2.0
-Added:   Argument '-a n' '--auto n'
-         automaticaly change ip after start every n
-         example:   ipchanger.exe -a 35
-                    change ip auto every 35 sec
+rewritten with python3.4+
+Added:   
+   Option '-a n' '--auto n'
+       automaticaly change ip after start every n
+       example:   ipchanger.exe -a 35
+                  change ip auto every 35 sec
+   Option '-d' '--debug'
+       print debugging inside logs
+   Progress bar indicator
+   Better anonymity      
 
-Added:   Progress bar indicator
-Fixed:   Socket unexpected timeout
-Fixed:   TOR switcher crashed after while
-Changed: Better logging
-Changed: Start TOR timeout to 120 seconds
-Removed: Configure browser button
+Fixed:
+   Socket unexpected timeout
+   TOR switcher crashed after while
+   Access Violation c0000005
+
+Changed: 
+   Better logging
+   Start TOR timeout to 120 seconds
+   Close old TOR circuits before new IP
+
+Removed: 
+   Configure browser button (too much bugy)
   
-Usage:   click Start TOR, set your proxy to
-         SOCKS5 127.0.0.1:9050 and click Change IP
+Usage:   
+   click Start TOR, set your proxy to
+   SOCKS5 127.0.0.1:9050 and click Change IP
 
-         Iam not responsible for any causalities or whatever
-         In case of any problems, send logs to
-         toripchanger@gmail.com
+Iam not responsible for any causalities or whatever
+In case of any problems, send logs to
+toripchanger@gmail.com
