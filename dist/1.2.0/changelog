@@ -1,14 +1,22 @@
 Changelog: v1.2.0
 rewritten with python3.4+
+
 Added:   
+   Progress bar indicator
+   Better anonymity      
+
    Option '-a n' '--auto n'
        automaticaly change ip after start every n
        example:   ipchanger.exe -a 35
                   change ip auto every 35 sec
    Option '-d' '--debug'
        print debugging inside logs
-   Progress bar indicator
-   Better anonymity      
+   Option '-m n' '--multi n'
+       start multiple proxy n instances
+       example:   ipchanger.exe -m 5
+                  start proxy 5 times
+                  with different ports
+                  and generate list
 
 Fixed:
    Socket unexpected timeout
@@ -25,7 +33,8 @@ Removed:
   
 Usage:   
    click Start TOR, set your proxy to
-   SOCKS5 127.0.0.1:9050 and click Change IP
+   SOCKS5 127.0.0.1:9050 or list below 
+   and click Change IP
 
 Iam not responsible for any causalities or whatever
 In case of any problems, send logs to
