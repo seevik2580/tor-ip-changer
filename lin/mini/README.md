@@ -9,7 +9,7 @@ install dependency:
 usage:  
 `chmod +x ipchanger`
 
-`tor -f torrc` or `tor --HashedControlPassword "" --ControlPort 9051 --SocksPort 9050`
+`tor -f torrc`   OR    `tor --HashedControlPassword "" --ControlPort 9051 --SocksPort 9050`
 
 ### change ip every 10 seconds
 `while true;do ./ipchanger;sleep 10;done`
