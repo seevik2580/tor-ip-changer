@@ -7,14 +7,15 @@ Added:
    TOR DNS server @ 127.0.0.1:53 
                       for preventing dns leaks :)
 
-   Option '-a n' '--auto n'
+   Option '-a 10-n' '--auto n'
        automaticaly change ip after start every n
+       but minimum is 10 seconds
        example:   ipchanger.exe -a 35
                   change ip auto every 35 sec
    Option '-d' '--debug'
        print debugging inside logs
-   Option '-m n' '--multi n'
-       start multiple proxy n instances
+   Option '-m 1-100' '--multi 1-100'
+       start multiple proxy up to 100 instances
        example:   ipchanger.exe -m 5
                   start proxy 5 times
                   with different ports
