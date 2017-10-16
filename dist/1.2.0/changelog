@@ -3,7 +3,9 @@ rewritten with python3.4+
 
 Added:   
    Progress bar indicator
-   Better anonymity      
+   Better anonymity  
+   TOR DNS server @ 127.0.0.1:53 
+                      for preventing dns leaks :)
 
    Option '-a n' '--auto n'
        automaticaly change ip after start every n
