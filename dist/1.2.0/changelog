@@ -27,7 +27,7 @@ Fixed:
    Access Violation c0000005
 
 Changed: 
-   Better logging
+   Better logging  (-d)
    Start TOR timeout to 120 seconds
    Close old TOR circuits before new IP
 
@@ -35,7 +35,8 @@ Removed:
    Configure browser button (too much bugy)
   
 Usage:   
-   click Start TOR, set your proxy to
-   SOCKS5 127.0.0.1:9050 or list below 
-   and click Change IP
+   1. click TOR server > Start
+   2. set your proxy to SOCKS5 127.0.0.1:9050 or list generated below 
+   3. and click IP Changer > Start
+   4. set DNS to 127.0.0.1 (dont forget to revert after stopping TOR)
 
