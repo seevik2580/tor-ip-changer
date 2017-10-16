@@ -36,7 +36,9 @@ Removed:
   
 Usage:   
    1. click TOR server > Start
-   2. set your proxy to SOCKS5 127.0.0.1:9050 or list generated below 
+   2. set your proxy to SOCKS5 127.0.0.1:9050 
+      or list generated below 
    3. and click IP Changer > Start
-   4. set DNS to 127.0.0.1 (dont forget to revert after stopping TOR)
+   4. set DNS to 127.0.0.1 
+      (dont forget to revert after stopping TOR)
 
