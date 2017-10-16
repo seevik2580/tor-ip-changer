@@ -7,7 +7,7 @@ Added:
    TOR DNS server @ 127.0.0.1:53 
                       for preventing dns leaks :)
 
-   Option '-a 10-n' '--auto n'
+   Option '-a 10-n' '--auto 10-n'
        automaticaly change ip after start every n
        but minimum is 10 seconds
        example:   ipchanger.exe -a 35
