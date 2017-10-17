@@ -6,6 +6,9 @@ Added:
    Better anonymity  
    TOR DNS server @ 127.0.0.1:53 
                       for preventing dns leaks :)
+   .onion domains, feel free to browse onion sites
+                   be sure to disable javascript
+                   for anonymity
 
    Option '-a 10-n' '--auto 10-n'
        automaticaly change ip after start every n
