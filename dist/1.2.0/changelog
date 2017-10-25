@@ -9,9 +9,7 @@ Added:
    Autochange after program start
    TOR DNS server @ 127.0.0.1:53 
                       for preventing dns leaks :)
-   .onion domains, feel free to browse onion sites
-                   be sure to disable javascript
-                   for anonymity
+   .onion domains, need TOR DNS or DNS requests via socks5
 ***********************************************************
    Option '-a 10-n' '--auto 10-n'
        automaticaly change ip after program start 
