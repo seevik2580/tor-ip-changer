@@ -1,47 +1,44 @@
+***************************************************
 Changelog: v1.2.0
 rewritten with python3.4+
-
+***************************************************
 Added:   
    Progress bar indicator
-   Better anonymity  
+   Better anonymity 
+   Country selection
+   Autochange after program start
    TOR DNS server @ 127.0.0.1:53 
                       for preventing dns leaks :)
    .onion domains, feel free to browse onion sites
                    be sure to disable javascript
                    for anonymity
-
+***************************************************
    Option '-a 10-n' '--auto 10-n'
-       automaticaly change ip after start every n
-       but minimum is 10 seconds
+       automaticaly change ip after program start 
+       every n but minimum is 10 seconds
        example:   ipchanger.exe -a 35
                   change ip auto every 35 sec
+   
    Option '-d' '--debug'
        print debugging inside logs
+   
    Option '-m 1-100' '--multi 1-100'
        start multiple proxy up to 100 instances
        example:   ipchanger.exe -m 5
                   start proxy 5 times
                   with different ports
                   and generate list
-
+***************************************************
 Fixed:
    Socket unexpected timeout
    TOR switcher crashed after while
    Access Violation c0000005
-
+***************************************************
 Changed: 
    Better logging  (-d)
    Start TOR timeout to 120 seconds
    Close old TOR circuits before new IP
-
+***************************************************
 Removed: 
    Configure browser button (too much bugy)
-  
-Usage:   
-   1. click TOR server > Start
-   2. set your proxy to SOCKS5 127.0.0.1:9050 
-      or list generated below 
-   3. and click IP Changer > Start
-   4. set DNS to 127.0.0.1 
-      (dont forget to revert after stopping TOR)
-
+***************************************************  
