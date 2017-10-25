@@ -11,22 +11,6 @@ Added:
                       for preventing dns leaks :)
    .onion domains, need TOR DNS or DNS requests via socks5
 ************************************************************
-   Option '-a 10-n' '--auto 10-n'
-       automaticaly change ip after program start 
-       every n but minimum is 10 seconds
-       example:   ipchanger.exe -a 35
-                  change ip auto every 35 sec
-   
-   Option '-d' '--debug'
-       print debugging inside logs
-   
-   Option '-m 1-100' '--multi 1-100'
-       start multiple proxy up to 100 instances
-       example:   ipchanger.exe -m 5
-                  start proxy 5 times
-                  with different ports
-                  and generate list
-************************************************************
 Fixed:
    Socket unexpected timeout
    TOR switcher crashed after while
