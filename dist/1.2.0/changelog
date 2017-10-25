@@ -1,7 +1,7 @@
-***********************************************************
+************************************************************
 Changelog: v1.2.0
 rewritten with python3.4+
-***********************************************************
+************************************************************
 Added:   
    Progress bar indicator
    Better anonymity 
@@ -10,7 +10,7 @@ Added:
    TOR DNS server @ 127.0.0.1:53 
                       for preventing dns leaks :)
    .onion domains, need TOR DNS or DNS requests via socks5
-***********************************************************
+************************************************************
    Option '-a 10-n' '--auto 10-n'
        automaticaly change ip after program start 
        every n but minimum is 10 seconds
@@ -26,17 +26,17 @@ Added:
                   start proxy 5 times
                   with different ports
                   and generate list
-***********************************************************
+************************************************************
 Fixed:
    Socket unexpected timeout
    TOR switcher crashed after while
    Access Violation c0000005
-***********************************************************
+************************************************************
 Changed: 
    Better logging  (-d)
    Start TOR timeout to 120 seconds
    Close old TOR circuits before new IP
-***********************************************************
+************************************************************
 Removed: 
    Configure browser button (too much bugy)
-***********************************************************
+************************************************************
