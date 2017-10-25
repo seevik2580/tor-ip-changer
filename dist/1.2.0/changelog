@@ -15,6 +15,7 @@ Fixed:
    Access Violation c0000005
 ************************************************************
 Changed: 
+   User interface
    Better logging  (-d)
    Start TOR timeout to 120 seconds
    Close old TOR circuits before new IP
