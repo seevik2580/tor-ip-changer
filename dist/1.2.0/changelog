@@ -8,7 +8,6 @@ Added:
    Country selection
    Autochange after program start
    TOR DNS server @ 127.0.0.1:53 
-                      for preventing dns leaks :)
    .onion domains, need TOR DNS or DNS requests via socks5
 ************************************************************
 Fixed:
