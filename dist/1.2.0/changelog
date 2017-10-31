@@ -16,11 +16,14 @@ Fixed:
 ************************************************************
 Changed: 
    User interface
-   Better logging  (-d)
+   Better logging
    Start TOR timeout to 120 seconds
    Close old TOR circuits before new IP
 ************************************************************
 Removed: 
    Configure browser button (too much bugy)
 ************************************************************
-
+Thanks:
+   new sponsor Altnet s.r.o. ISP provider in Czech republic
+   Skvely.net®
+************************************************************
