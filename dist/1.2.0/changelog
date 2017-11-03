@@ -8,6 +8,7 @@ Added:
    Autochange after program start
    TOR DNS server @ 127.0.0.1:53 
    .onion domains, need TOR DNS or DNS requests via socks5
+   Multiproxy
 ************************************************************
 Fixed:
    Socket unexpected timeout
