@@ -8,7 +8,9 @@ install dependency:
 
 usage:  
 `chmod +x ipchanger`
+
 `/etc/init.d/tor stop`
+
 `tor -f torrc`   OR    `tor --HashedControlPassword "" --ControlPort 9051 --SocksPort 9050`
 
 ### change ip every 10 seconds
