@@ -8,10 +8,10 @@ Added:
    Better anonymity.
 ************************************************************
 Fixed:
-   Fetching ip timeout.
+   offten Fetching ip timeout. (i hope :D)
 ************************************************************
 Changed: 
-   Fetching ip mechanism.
+   new Fetching ip mechanism.
    increased timeout from 120 to 240 secs for Tor start 
 ************************************************************
 Thanks:
