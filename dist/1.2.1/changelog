@@ -3,6 +3,8 @@ Changelog: v1.2.1
 ************************************************************
 Added:   
    Bridges. (Options > Settings) - for now only obfs 1,2,3,4
+         or edit Tor/bridges.txt to insert your obfs bridges
+         default will be downloaded from github
    Better anonymity.
 ************************************************************
 Fixed:
