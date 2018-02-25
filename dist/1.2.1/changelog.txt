@@ -1,0 +1,17 @@
+************************************************************
+Changelog: v1.2.1
+************************************************************
+Added:   
+   Bridges. (Options > Settings) - for now only obfs 1,2,3,4
+   Better anonymity.
+************************************************************
+Fixed:
+   Fetching ip timeout.
+************************************************************
+Changed: 
+   Fetching ip mechanism.
+************************************************************
+Thanks:
+   sponsor Altnet s.r.o. ISP provider in Czech republic
+   Skvely.net®, banner will be visible until 01/11/2019
+************************************************************
