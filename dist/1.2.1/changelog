@@ -12,6 +12,7 @@ Fixed:
 ************************************************************
 Changed: 
    Fetching ip mechanism.
+   increased timeout from 120 to 240 secs for Tor start 
 ************************************************************
 Thanks:
    sponsor Altnet s.r.o. ISP provider in Czech republic
