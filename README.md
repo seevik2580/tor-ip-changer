@@ -2,6 +2,12 @@
 request new identity every X seconds interval using TOR client
 
 ## Video demonstrations
+1.0.0
+[https://www.youtube.com/watch?v=AxM4_FgEb-w](https://www.youtube.com/watch?v=AxM4_FgEb-w)
+
+1.1.0
+[https://www.youtube.com/watch?v=e990NVVLxAE](https://www.youtube.com/watch?v=e990NVVLxAE)
+
 1.2.0
 [https://www.youtube.com/watch?v=vAmjkTdnl2M](https://www.youtube.com/watch?v=vAmjkTdnl2M)
 
