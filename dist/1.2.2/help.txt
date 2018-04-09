@@ -20,7 +20,10 @@ In case of any problems, send logs to toripchanger@gmail.com
 
   '-s' hide sponsor bar after start
 *****************************API****************************
+  in default settings
   telnet 127.0.0.1 14999
+  if you create shortcut with option -p | --publicAPI then
+  telnet computerIP/publicIP 14999
   *******************************************
   help              | print usage
   tor start         | start tor server
