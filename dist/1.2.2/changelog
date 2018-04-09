@@ -3,6 +3,19 @@ Changelog: v1.2.2
 ************************************************************
 Added:   
    API - you can now telnet to port 14999 and control app
+         its possible to use ipchanger with your own code
+         *******************************************
+         telnet 127.0.0.1 14999
+         *******************************************
+         help              | print usage
+         tor start         | start tor server
+         tor stop          | stop tor server
+         interval N        | set interval to N
+         changeip start    | start autochanging ip
+         changeip stop     | stop autochanging ip
+         changeip once     | just change once
+         exit
+         *******************************************
 ************************************************************
 Removed:
    Checking internet connection.
