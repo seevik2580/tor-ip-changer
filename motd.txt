@@ -1,6 +1,6 @@
 ************************************************************
-Geoip last update   16.02.2018
-Geoip based on February 7 2018
+Geoip last update   09.04.2018
+Geoip based on    April 3 2018
 ************************************************************
 Message of the day
 how to use : https://www.youtube.com/watch?v=vAmjkTdnl2M
