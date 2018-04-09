@@ -2,8 +2,8 @@
 Changelog: v1.2.2
 ************************************************************
 Added:   
-   API - you can now telnet to port 14999 and control app
-         its possible to use ipchanger with your own code
+   API - you can now telnet to port 14999 and use ipchanger 
+         with your own code
          *******************************************
          telnet 127.0.0.1 14999
          *******************************************
