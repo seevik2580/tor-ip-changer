@@ -14,7 +14,7 @@ Added:
          changeip start    | start autochanging ip
          changeip stop     | stop autochanging ip
          changeip once     | just change once
-         exit
+         exit              | close connection
          *******************************************
 ************************************************************
 Removed:
