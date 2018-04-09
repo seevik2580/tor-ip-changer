@@ -34,6 +34,7 @@ In case of any problems, send logs to toripchanger@gmail.com
   changeip once     | just change once
   exit              | close connection
   *******************************************
+  API can be used with any language which support telnet
   examples API usage with python:
       import telnetlib
       tn = telnetlib.Telnet('127.0.0.1', '14999', 5)
