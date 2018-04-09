@@ -4,6 +4,7 @@ Geoip last update     09.04.2018
 Geoip based on      April 3 2018
 ************************************************************
 Message of the day
-how to use : https://www.youtube.com/watch?v=vAmjkTdnl2M
+how to use:    https://www.youtube.com/watch?v=vAmjkTdnl2M
 how to bridge: https://www.youtube.com/watch?v=LZK-sO5ivKQ
+how to API:    https://www.youtube.com/watch?v=NjczNS5b5KA
 ************************************************************
