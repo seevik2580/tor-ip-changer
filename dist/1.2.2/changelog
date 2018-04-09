@@ -13,7 +13,7 @@ Added:
          interval N        | set interval to N
          changeip start    | start autochanging ip
          changeip stop     | stop autochanging ip
-         changeip once     | just change once
+         changeip once     | just change ip once
          exit              | close connection
          *******************************************
 ************************************************************
