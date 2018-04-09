@@ -34,6 +34,28 @@ In case of any problems, send logs to toripchanger@gmail.com
   changeip once     | just change once
   exit              | close connection
   *******************************************
+  examples API usage with python:
+      import telnetlib
+      tn = telnetlib.Telnet('127.0.0.1', '14999', 5)
+      tn.write(b"changeip once\r\n")
+      tn.close
+      
+  examples API usage with bash:
+      #!/bin/bash
+      echo "changeip once" | telnet 127.0.0.1 14999
+      
+  examples API usage with PHP:
+      $f=fsockopen("127.0.0.1",14999,5);
+      if (!$f) {
+         echo "not connected";
+      } else {
+         echo "connected";
+
+         echo fgets($f, 1024);
+         fwrite($f,"changeip once\\r\n");
+         fwrite($f,"exit\\r\n");
+         fclose($f);
+      }
 **************************Bridges***************************  
 edit Tor/bridges.txt to insert your obfs bridges.
 if not changed then default will be downloaded from github
