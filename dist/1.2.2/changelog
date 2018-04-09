@@ -1,0 +1,16 @@
+************************************************************
+Changelog: v1.2.2
+************************************************************
+Added:   
+   API - you can now telnet to port 14999 and control app
+************************************************************
+Removed:
+   Checking internet connection.
+************************************************************
+Changed: 
+   Check for update.
+************************************************************
+Thanks:
+   sponsor Altnet s.r.o. ISP provider in Czech republic
+   Skvely.net®, banner will be visible until 01/11/2019
+************************************************************
