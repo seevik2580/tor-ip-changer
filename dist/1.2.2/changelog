@@ -3,7 +3,8 @@ Changelog: v1.2.2
 ************************************************************
 Added:   
    API - you can now telnet to port 14999 and use ipchanger 
-         with your own code
+         with your own code 
+         (thanks to github.com/deshudiosh for this idea)
          *******************************************
          telnet 127.0.0.1 14999
          *******************************************
