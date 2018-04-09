@@ -46,17 +46,28 @@ In case of any problems, send logs to toripchanger@gmail.com
       echo "changeip once" | telnet 127.0.0.1 14999
       
   examples API usage with PHP:
-      $f=fsockopen("127.0.0.1",14999,5);
+      <?
+      $host = "localhost";
+      $port = "14999";
+      $timeout = "5";
+      $f=fsockopen($host,$port,$timeout);
       if (!$f) {
-         echo "not connected";
+              echo "not connected";
       } else {
-         echo "connected";
+              echo "connected<br>";
 
-         echo fgets($f, 1024);
-         fwrite($f,"changeip once\\r\n");
-         fwrite($f,"exit\\r\n");
-         fclose($f);
+              echo fgets($f, 1024);
+              fwrite($f,"tor start\r\n");
+              sleep(30);
+              fwrite($f,"interval 30\r\n");
+              sleep(1);
+              fwrite($f,"changeip start\r\n");
+              sleep(1);
+              fwrite($f,"exit\r\n");
+              echo fgets($f, 1024);
+               fclose($f);
       }
+      ?>
 **************************Bridges***************************  
 edit Tor/bridges.txt to insert your obfs bridges.
 if not changed then default will be downloaded from github
