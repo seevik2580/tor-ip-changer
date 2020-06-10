@@ -1,3 +1,6 @@
+
+source code url: https://github.com/seevik2580/tor-ip-changer/tree/master/source-code
+
 In case of any problems, send logs to toripchanger@gmail.com
 ****************************usage***************************
    1. click TOR server > Start
@@ -5,6 +8,7 @@ In case of any problems, send logs to toripchanger@gmail.com
    3. set your proxy to SOCKS5 127.0.0.1:9050 
       or list generated after start (only if multiproxy) 
    4. click IP Changer > Start
+   
 ***********************exe shortcuts************************
   '-a n' automaticaly change ip after start every n
          example:   ipchanger.exe -a 35
@@ -19,6 +23,7 @@ In case of any problems, send logs to toripchanger@gmail.com
   '-d' open debug console live log
 
   '-s' hide sponsor bar after start
+
 *****************************API****************************
   in default settings
   telnet 127.0.0.1 14999
@@ -68,9 +73,11 @@ In case of any problems, send logs to toripchanger@gmail.com
                fclose($f);
       }
       ?>
+
 **************************Bridges***************************  
 edit Tor/bridges.txt to insert your obfs bridges.
 if not changed then default will be downloaded from github
+
 ***********************Country codes************************
 (not all may works)                               
 ASCENSION ISLAND                      {ac}
@@ -319,4 +326,5 @@ WESTERN SAHARA                        {eh}
 YEMEN                                 {ye}
 ZAMBIA                                {zm}
 ZIMBABWE                              {zw}
+
 ************************************************************
