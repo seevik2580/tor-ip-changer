@@ -2,15 +2,15 @@
 Changelog: v1.2.3
 ************************************************************
 Added:
-    - project open-sourced
-    - change country with argument -c {COUNTRYCODE}
+    + project open-sourced
+    + change country with argument -c {COUNTRYCODE}
 
 ************************************************************
 Removed:
-    -
 
 ************************************************************
 Changed: 
-    - show API binded port number
+    + show API binded with port number
+    - show API binded
 
 ************************************************************
