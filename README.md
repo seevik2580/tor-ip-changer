@@ -12,7 +12,7 @@
    4. click IP Changer > Start
 ```
    
-# ***********************exe shortcuts************************
+# *************************shortcuts**************************
 ```
   '-a n' automaticaly change ip after start every n
          example:   ipchanger.exe -a 35
