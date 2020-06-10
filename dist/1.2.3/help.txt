@@ -23,6 +23,8 @@ In case of any problems, send logs to toripchanger@gmail.com
   '-d' open debug console live log
 
   '-s' hide sponsor bar after start
+  
+  '-c {COUNTRYCODE}' select specific country
 
 *****************************API****************************
   in default settings
