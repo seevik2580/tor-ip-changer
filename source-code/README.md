@@ -7,3 +7,4 @@
 
 ## binaries:
 - use build.bat to build binaries for windows
+- binaries can be found inside folder Dist
