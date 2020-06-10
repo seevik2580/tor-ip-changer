@@ -4,6 +4,6 @@ Geoip last update     06.12.2019
 Geoip based on        Dec 3 2019
 ************************************************************
 Message of the day: project open-sourced :)
-source url: https://bit.ly/3cQgapg
-repo url: https://github.com/seevik2580/tor-ip-changer
+Source url: https://bit.ly/3cQgapg
+Repo url: https://github.com/seevik2580/tor-ip-changer
 ************************************************************
