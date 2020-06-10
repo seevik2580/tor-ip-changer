@@ -1,11 +1,8 @@
-!for windows 7+
+## requirements:
+- python 3.4.x
+ 
+## dependency install:
+- `pip install -r requirements/pip-requirements.txt`
 
-!requirements
--python3.4
--pycurl
--py2exe
--urllib3
--pysocks
-
-!building binaries
--use build.bat
+## binaries:
+- use build.bat to build binaries for windows
