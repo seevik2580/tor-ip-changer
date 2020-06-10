@@ -1,4 +1,5 @@
 ## requirements:
+- windows 7+
 - python 3.4.x
  
 ## dependency install:
