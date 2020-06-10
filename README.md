@@ -49,19 +49,19 @@
   *******************************************
 ```  
   - API can be used with any language which support telnet
-  - examples API usage with python:
+  - example API usage with python:
 ```  
       import telnetlib
       tn = telnetlib.Telnet('127.0.0.1', '14999', 5)
       tn.write(b"changeip once\r\n")
       tn.close
 ```      
-  - examples API usage with bash:
+  - example API usage with bash:
 ```  
       #!/bin/bash
       echo "changeip once" | telnet 127.0.0.1 14999
 ```   
-  - examples API usage with PHP:
+  - example API usage with PHP:
 ```
       <?
       $host = "localhost";
