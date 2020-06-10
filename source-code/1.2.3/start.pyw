@@ -508,10 +508,10 @@ class IpChanger(Tk):
         
         try:
             s.bind((self.appHOST, self.appPORT))
-            self.write('API server binded to %s (%s) OK.\n' % (self.appHOST,self.bindtype), 'green', 1)
+            self.write('API server binded to %s:%s (%s) OK.\n' % (self.appHOST,self.appPORT,self.bindtype), 'green', 1)
             
         except socket.error as msg:
-            self.write('API server binded to %s (%s) ERROR.\n' % (self.appHOST,self.bindtype), "red", 1)
+            self.write('API server binded to %s:%s (%s) ERROR.\n' % (self.appHOST,self.appPORT,self.bindtype), "red", 1)
             return
 
         s.listen(10)
