@@ -1,7 +1,7 @@
 ************************************************************
-IPchanger last update 09.04.2018
-Geoip last update     06.06.2018
-Geoip based on        May 1 2018
+IPchanger last update 11.06.2020
+Geoip last update     06.12.2019
+Geoip based on        Dec 3 2019
 ************************************************************
-Message of the day
+Message of the day: project open-sourced :)
 ************************************************************
