@@ -487,10 +487,6 @@ class IpChanger(Tk):
     #funkce na schovani logu live    
     def hidelog(self):
         self.logmenu.entryconfig(1, label = "Debug console", command=self.showlog)
-        SW_HIDE = 0
-        info = subprocess.STARTUPINFO()
-        info.dwFlags = subprocess.STARTF_USESHOWWINDOW
-        info.wShowWindow = SW_HIDE
         os.system(r'killall tail')
         
     #funkce na vypsani debug infa aplikace do console a logu
@@ -764,7 +760,7 @@ class IpChanger(Tk):
                         self.oldpercent = boot
                     
                     self.progressbar["value"] = float(match.group().rstrip("%"))
-                    if (match.group() == "100%") or (match.group() == "90%") or (match.group() == "85%"):
+                    if (match.group() >= "100%") or (match.group() == "90%") or (match.group() == "85%") or (match.group() >= "85%"):
                         self.write("TOR server started \n", "green", 1) 
                         self.progressbar["value"] = 100 
                         self.progressbar["style"] = "orange.Horizontal.TProgressbar"
