@@ -4,6 +4,7 @@
 ### iam not responsible for anything what you will do with this program, or for any other s**ts !!! it is for education purposes only
 
 ![](screenshots/1.png)
+
 ![](screenshots/2.png)
 
 # ****************************usage***************************
@@ -15,6 +16,7 @@
    4. click IP Changer > Start
 ```
 ![](screenshots/4.png)
+
 ![](screenshots/5.png)
    
 # *************************shortcuts**************************
@@ -41,6 +43,7 @@
 ![](screenshots/6.png)
 
 ![](screenshots/7.png)
+
 ![](screenshots/8.png)
 
 *****************************API****************************
