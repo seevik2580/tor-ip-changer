@@ -6,9 +6,8 @@
  
 ## dependency install:
 - `curl https://pyenv.run | bash`
-- ```
-write at the end of .bashrc
-
+- write at the end of .bashrc
+```
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
