@@ -1,3 +1,5 @@
+# experimental! not stable!
+
 ## requirements:
 - linux (ubuntu,debian..)
 - pynev python 3.4.10
