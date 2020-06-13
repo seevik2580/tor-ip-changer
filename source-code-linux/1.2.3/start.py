@@ -74,8 +74,8 @@ class IpChanger(Tk):
          
         #definice pro menu IP Changer 
         self.changermenu = Menu(self, tearoff=0)
-        self.changermenu.add_command(label="Start", state="disabled", command=self.start)
-        self.changermenu.add_command(label="Stop", state="disabled", command=self.stop)
+        self.changermenu.add_command(label="Start", state="disabled", command=self.ipstart)
+        self.changermenu.add_command(label="Stop", state="disabled", command=self.ipstop)
         self.menubar.add_cascade(label="IP changer".ljust(10), menu=self.changermenu)
         
         #definice pro menu Logs
@@ -551,13 +551,13 @@ class IpChanger(Tk):
                 elif data == b'changeip start\r\n':
                     if self.bezi == 1:
                         reply = b'start ip changing\r\n'
-                        self.start()
+                        self.ipstart()
                     else:
                         reply = b'tor server not running\r\n'
                 elif data == b'changeip stop\r\n':
                     if self.bezi == 1:
                         reply = b'stop ip changing\r\n'
-                        self.stop()
+                        self.ipstop()
                     else:
                         reply = b'tor server not running\r\n'
                 elif rozdel[0] == 'interval':
@@ -617,7 +617,7 @@ class IpChanger(Tk):
         self.tormenu.entryconfig(0, state="normal")
         self.tormenu.entryconfig(1, state="disabled")
         if self.meni == 1:
-          _thread.start_new_thread(self.stop, ())
+          _thread.start_new_thread(self.ipstop, ())
         
         SW_HIDE = 0
         os.system(r'killall tor')
@@ -780,7 +780,7 @@ class IpChanger(Tk):
                             self.write("------------------------------------------------------------", "white", 1)                                
                         if args.auto is not None:
                             try:
-                                _thread.start_new_thread(self.start, ())
+                                _thread.start_new_thread(self.ipstart, ())
                             except:
                                 pass    
                         self.write("DNS server started \n", "green", 1) 
@@ -908,7 +908,7 @@ class IpChanger(Tk):
         _thread.start_new_thread(self.ip, ())
         
     #funkce startu zmeny IP
-    def start(self):
+    def ipstart(self):
         self.start = timer()
         self.write('IP Changer started.\n', "green", 1)
         self.progressbar["style"] = "green.Horizontal.TProgressbar" 
