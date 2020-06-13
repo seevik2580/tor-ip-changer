@@ -14,8 +14,8 @@
       or list generated after start (only if multiproxy) 
    4. click IP Changer > Start
 ```
-![](screenshots/3.png)
 ![](screenshots/4.png)
+![](screenshots/5.png)
    
 # *************************shortcuts**************************
 ```
