@@ -21,6 +21,8 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 if not os.path.exists(datadirectory):
     os.makedirs(datadirectory)
+if not os.path.exists(tordirectory):
+    os.makedirs(tordirectory)
     
 logchanger = datetime.now().strftime('Logs/ipchanger_%Y_%m_%d_%H_%M_%S.log')
 logtor = datetime.now().strftime('Logs/tor_%Y_%m_%d_%H_%M_%S.txt')
@@ -451,7 +453,7 @@ class IpChanger(Tk):
             info = subprocess.STARTUPINFO()
             info.dwFlags = subprocess.STARTF_USESHOWWINDOW
             info.wShowWindow = SW_HIDE
-            os.system(r'cmd /c start notepad help.txt', startupinfo=info)
+            os.system(r'gedit help.txt')
         except:
             self.write("Can't open help.txt \n", "orange", 1)
             pass
@@ -489,7 +491,7 @@ class IpChanger(Tk):
         info = subprocess.STARTUPINFO()
         info.dwFlags = subprocess.STARTF_USESHOWWINDOW
         info.wShowWindow = SW_HIDE
-        os.system(r'cmd /c taskkill /f /im tail', startupinfo=info)
+        os.system(r'killall tail')
         
     #funkce na vypsani debug infa aplikace do console a logu
     def appInfo(self):
@@ -622,11 +624,8 @@ class IpChanger(Tk):
           _thread.start_new_thread(self.stop, ())
         
         SW_HIDE = 0
-        info = subprocess.STARTUPINFO()
-        info.dwFlags = subprocess.STARTF_USESHOWWINDOW
-        info.wShowWindow = SW_HIDE
-        os.system(r'cmd /c taskkill /f /im tor', startupinfo=info)
-        os.system(r'cmd /c taskkill /f /im obfs4proxy', startupinfo=info)
+        os.system(r'killall tor')
+        os.system(r'killall obfs4proxy')
         
         self.write("TOR server stopped. \n", "error", 1)   
         self.ident = random.random()
@@ -647,10 +646,13 @@ class IpChanger(Tk):
     #funkce k pouziti bridges
     def bridges(self, identify=None):
         if eval("self.useBridges_%s.get()" % str(identify)) == 1:
+            filebridges = 'bridges.txt'
+            if not os.path.exists("Tor/%s" % filebridges):
+                self.download("https://github.com/seevik2580/tor-ip-changer/raw/master/tor/%s" % (filebridges), None, "Tor")
             with open('Tor/bridges.txt', 'r') as f:
                 self.bridge = '--UseBridges 1 '
-                self.bridge += '--ClientTransportPlugin "obfs2,obfs3,obfs4 exec Tor\obfs4proxy managed" '
-                self.bridge += '--clientTransportPlugin "meek exec Tor\meek-client" '
+                self.bridge += '--ClientTransportPlugin "obfs2,obfs3,obfs4 exec /usr/bin/obfs4proxy managed" '
+                self.bridge += '--clientTransportPlugin "meek exec /usr/bin/obfs4proxy" '
                 for line in f:
                     l = line.split('\n')[0]
                     self.bridge += '--Bridge "%s" ' % l
