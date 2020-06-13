@@ -3,7 +3,8 @@
 - pynev python 3.4.10
  
 ## dependency install:
-- `sudo apt install curl libcurl4-openssl-dev libssl-dev authbind`
+- `sudo apt install curl libcurl4-openssl-dev libssl-dev authbind tor`
+- `sudo systemctl stop tor`
 - `curl https://pyenv.run | bash`
 - add at the end of ~/.bashrc
 ```
