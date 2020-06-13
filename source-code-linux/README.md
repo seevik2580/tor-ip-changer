@@ -1,19 +1,19 @@
 ## requirements:
 - linux (ubuntu,debian..)
-- python 3.4.x
-- pynev
- 
+- pynev python 3.4.10
  
 ## dependency install:
 - `curl https://pyenv.run | bash`
-- write at the end of .bashrc
+- add at the end of ~/.bashrc
 ```
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-
-- `pip install -r requirements/pip-requirements.txt`
+- `env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.4.10`
+- `sudo apt install libcurl4-openssl-dev libssl-dev`
+- `pyenv global 3.4.10`
+- `python -m pip install -r requirements/pip-requirements.txt`
 
 ## binaries:
 - use build.sh to build binaries for linux
