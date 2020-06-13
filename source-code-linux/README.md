@@ -20,4 +20,6 @@ eval "$(pyenv virtualenv-init -)"
 
 ## binaries:
 - use build.sh to build binaries for linux
-- binaries can be found inside folder Dist
+- binaries can be found inside folder Dist/ipchanger
+- `cd dist/ipchanger`
+- `./ipchanger`
