@@ -5,7 +5,8 @@
 - pynev python 3.4.10
  
 ## dependency install:
-- `sudo apt install curl libcurl4-openssl-dev libssl-dev authbind tor`
+- `sudo apt install curl libcurl4-openssl-dev libssl-dev authbind tor obfs4proxy`
+- `sudo dpkg -i requirements/meek-client_0.20+git20151006-1_amd64.deb`
 - `sudo systemctl stop tor`
 - `curl https://pyenv.run | bash`
 - add at the end of ~/.bashrc
