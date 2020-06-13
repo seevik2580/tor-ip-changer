@@ -4,6 +4,7 @@
  
 ## dependency install:
 - `pip install -r requirements/pip-requirements.txt`
+- `install requirements/pycurl-7.43.0.win-amd64-py3.4.exe`
 
 ## binaries:
 - use build.bat to build binaries for windows
