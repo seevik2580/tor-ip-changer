@@ -919,7 +919,7 @@ class IpChanger(Tk):
         _thread.start_new_thread(self.appInfo, ())
             
     #funkce zastaveni zmeny IP
-    def stop(self): 
+    def ipstop(self): 
         self.write('IP Changer stopping. Wait..\n', "error", 1)
         self.write('Fetching IP stopping. Wait..\n', "error", 1)
         self.ident = random.random() 
