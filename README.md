@@ -15,6 +15,7 @@
    4. click IP Changer > Start
 ```
 ![](screenshots/3.png)
+![](screenshots/4.png)
    
 # *************************shortcuts**************************
 ```
