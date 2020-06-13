@@ -12,6 +12,7 @@ export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
+- `exec $SHELL`
 - `env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.4.10`
 - `pyenv global 3.4.10`
 - `python -m pip install -r requirements/pip-requirements.txt`
