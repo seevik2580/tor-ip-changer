@@ -984,9 +984,9 @@ class IpChanger(Tk):
             self.output.see('end') 
             c = c + 1                                                         
         else:
-            print(message)
+            print(message.rstrip("\n"))
             if log == True:
-                logging.info(message)
+                logging.info(message.rstrip("\n"))
 
     #funkce na psani debug do logu                                  
     def debug(self, message):
