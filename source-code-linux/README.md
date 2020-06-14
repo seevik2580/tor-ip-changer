@@ -21,9 +21,10 @@ export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-
-### part3 - install python 3.4.10 with pyenv and tkinter module + install pip requirements, installation of pip needs openssl1.0 or installation crashes
+- run
 - `exec $SHELL`
+### part3 - install python 3.4.10 with pyenv and tkinter module + install pip requirements, installation of pip needs openssl1.0 or installation crashes
+
 - `echo "deb [trusted=yes] http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list`
 - `sudo apt update`
 - `sudo apt install libssl1.0-dev tk-dev`
