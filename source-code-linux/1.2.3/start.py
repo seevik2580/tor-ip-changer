@@ -620,7 +620,8 @@ class IpChanger(Tk):
                                 reply = b'tor server not running\r\n'        
                         else:
                             reply = b'definuj cislo portu proxy\r\n'
-                    except:
+                    except Exception as e:
+                        self.write(e,'orange',1)
                         pass             
                 elif data == b'\r\n':
                     break
