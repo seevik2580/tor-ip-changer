@@ -1199,7 +1199,7 @@ class IpChanger(Tk):
             self.progressbar["value"] = 0
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
-    def newIP(self, port=9050):
+    def newIP(self, port=None):
       print(port)
       self.controlport = 15000
       proxy = 9050
