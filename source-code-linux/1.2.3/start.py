@@ -1207,7 +1207,7 @@ class IpChanger(Tk):
             instanci = 1
             proxy = int(port)
             newcontrolport = 15000 - 9050 + int(port)
-            self.controlport = int(newkontrolport)
+            self.controlport = int(newcontrolport)
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
