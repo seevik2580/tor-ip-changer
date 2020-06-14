@@ -36,7 +36,7 @@ eval "$(pyenv virtualenv-init -)"
 - `ipchanger`
 
 ```
-usage: ipchanger [-h] [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY]
+usage: ipchanger [-h] [-a n] [-d] [-m 1-100] [-p] [-c COUNTRY]
     '-a n' automaticaly change ip after start every n
             example:   ipchanger.exe -a 35
                         change ip auto every 35 sec
