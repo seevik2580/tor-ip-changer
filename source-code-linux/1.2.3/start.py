@@ -664,10 +664,10 @@ class IpChanger(Tk):
         files = self.logtorm
         self.bridges(identify)
         if eval("self.lang_%s.get()" % str(identify)) == "{random}":
-            os.system('(authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 | tee %s )&' % (self.bridge, self.control,self.proxy,self.data,files))
+            os.system('(authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 | tee %s ) > /dev/null &' % (self.bridge, self.control,self.proxy,self.data,files))
         else:
             language = eval("self.lang_%s.get()" % str(identify))
-            os.system('(authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s | tee %s )&' % (self.bridge, self.control,self.proxy,self.data,language,files))                
+            os.system('(authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s | tee %s ) > /dev/null &' % (self.bridge, self.control,self.proxy,self.data,language,files))                
         
         self.control = self.control + 1
         self.proxy = self.proxy + 1
@@ -688,9 +688,9 @@ class IpChanger(Tk):
             self.write("TOR server %s starting " % self.b, "green", 1)
             self.bridges('0')
             if self.lang_0.get() == "{random}":
-                os.system('( authbind --deep tor %s--CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 | tee %s )&' % (self.bridge, self.control,self.proxy,self.data,file))
+                os.system('( authbind --deep tor %s--CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 | tee %s ) > /dev/null &' % (self.bridge, self.control,self.proxy,self.data,file))
             else:
-                os.system('( authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s | tee %s )&' % (self.bridge, self.control,self.proxy,self.data,self.lang_0.get(),file))
+                os.system('( authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s | tee %s ) > /dev/null &' % (self.bridge, self.control,self.proxy,self.data,self.lang_0.get(),file))
         
             self.control = self.control + 1
             self.proxy = self.proxy + 1
@@ -710,9 +710,9 @@ class IpChanger(Tk):
             self.bridges('0')
             self.write("Please wait ... \n", "green", 1)
             if self.lang_0.get() == "{random}":
-                os.system(r'( authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 | tee %s )&' % (self.bridge, self.control,self.proxy,self.data,file))
+                os.system(r'( authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 | tee %s ) > /dev/null &' % (self.bridge, self.control,self.proxy,self.data,file))
             else:
-                os.system(r'( authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s | tee %s )&' % (self.bridge, self.control,self.proxy,self.data,self.lang_0.get(),file))
+                os.system(r'( authbind --deep tor %s --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s | tee %s ) > /dev/null &' % (self.bridge, self.control,self.proxy,self.data,self.lang_0.get(),file))
         timeout = 0
         count = 1    
         while not timeout==240 and key == self.ident:

@@ -1,5 +1,8 @@
 Logs
 Tor
 Data
-source-code-linux/1.2.3/__pycache__/start.cpython-34.pyc
 help.txt
+source-code-linux/1.2.3/__pycache__
+source-code-linux/1.2.3/dist
+source-code-linux/1.2.3/build
+source-code-linux/1.2.3/ipchanger.spec
