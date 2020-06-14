@@ -1200,7 +1200,6 @@ class IpChanger(Tk):
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
     def newIP(self, port=None):
-      print(port)
       self.controlport = 15000
       proxy = 9050
       self.write("-------------------------CHANGING-IP------------------------\n", "white", 1)  
@@ -1214,10 +1213,10 @@ class IpChanger(Tk):
         else:
             instanci = 1
 
-        if port != 9050:
+        if port is not None:
             instanci = 1
-            proxy = port
-            self.controlport = 15000 - 9050 + port
+            proxy = int(port)
+            self.controlport = 15000 - 9050 + int(port)
             print(self.controlport)
         for i in range(instanci):    
             try:
