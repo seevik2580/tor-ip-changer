@@ -556,10 +556,9 @@ class IpChanger(Tk):
                 reply += b'interval N          | set interval to N seconds\r\n'
                 reply += b'changeip start      | start autochanging ip\r\n'
                 reply += b'changeip stop       | stop autochanging ip\r\n'
-                reply += b'changeip once       | dont autochange, but change once\r\n'
-                reply += b'changeip onceport N | dont autochange, but change once\r\n'
-                reply += b'                  and only specific proxy port eg: 9050\r\n'
-                reply += b'shutdown            | exit ipchanger and close all connections\r\n'
+                reply += b'changeip once       | change ip once for all\r\n'
+                reply += b'changeip onceport N | change ip once for port N\r\n'
+                reply += b'shutdown            | exit and close all connections\r\n'
                 reply += b'exit                | close connection\r\n'
                 rozdelit = '%s' % data.decode("utf-8")
                 rozdel = rozdelit.split(" ")
@@ -1039,8 +1038,7 @@ class IpChanger(Tk):
         if port is not None:
             instanci = 1
             proxy = int(port)
-            print(proxy)
-
+            
         def fetching(proxy):
             languagenumber = proxy - 9050
             language = eval('self.lang_' + str(languagenumber) + '.get()')
