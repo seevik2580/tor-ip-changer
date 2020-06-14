@@ -24,7 +24,7 @@ eval "$(pyenv virtualenv-init -)"
 - run `exec $SHELL` to setup new $PATH
 ### part3 - install python 3.4.10 with pyenv and tkinter module + install pip requirements, installation of pip needs openssl1.0 or installation crashes
 
-- `echo "deb [trusted=yes] http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list`
+- `echo "deb [trusted=yes] http://security.ubuntu.com/ubuntu bionic-security main" | sudo tee -a /etc/apt/sources.list`
 - `sudo apt update`
 - `sudo apt install libssl1.0-dev tk-dev`
 - `env LDFLAGS=-L/usr/lib/openssl-1.0 CFLAGS="-DOPENSSL_NO_SSL3 -I/usr/include/openssl-1.0" PYTHON_CONFIGURE_OPTS="--enable-shared" ~/.pyenv/bin/pyenv install 3.4.10`
