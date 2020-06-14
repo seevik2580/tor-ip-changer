@@ -615,8 +615,9 @@ class IpChanger(Tk):
                                 if self.bezi == 1:
                                     reply = b'changing ip once for port '+rozdel[2]+'\r\n'
                                     try:
-                                        self.newIP(int(rozdel[2]))
-                                        self.IPandlatency(int(rozdel[2]))
+                                        _thread.start_new_thread(clientthread ,(self.newIP(int(rozdel[2])),))
+                                        _thread.start_new_thread(clientthread ,(self.IPandlatency(int(rozdel[2])),))
+                                        
                                     except Exception as e:
                                         self.write(e,'orange',1)
                                 else:
