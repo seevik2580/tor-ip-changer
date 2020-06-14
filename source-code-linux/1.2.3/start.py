@@ -608,7 +608,8 @@ class IpChanger(Tk):
                         pass
                 elif rozdel[0] == 'changeip' and rozdel[1] == 'once':
                     try:
-                        if rozdel[2] != '':
+                        if int(rozdel[2]):
+                            print(rozdel[2])
                             if self.bezi == 1:
                                 reply = b'changing ip once for port '+rozdel[2]+'\r\n'
                                 self.newIP(rozdel[2])
