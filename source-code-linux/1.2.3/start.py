@@ -968,20 +968,25 @@ class IpChanger(Tk):
              
     #funkce na psani vystupu   
     def write(self, message, color, log):
-        global c
-        name = "line%s" % c
-        if color == "error":
-            color = "red"
-        try:
-            self.output.insert(END, message, name)  
-        except:
-            pass
-        if log == True:
-            message = message.rstrip("\n")
-            logging.info(message)
-        self.output.tag_config(name, foreground=color)  
-        self.output.see('end') 
-        c = c + 1                                                         
+        if args.nogui is not True:
+            global c
+            name = "line%s" % c
+            if color == "error":
+                color = "red"
+            try:
+                self.output.insert(END, message, name)  
+            except:
+                pass
+            if log == True:
+                message = message.rstrip("\n")
+                logging.info(message)
+            self.output.tag_config(name, foreground=color)  
+            self.output.see('end') 
+            c = c + 1                                                         
+        else:
+            print(message)
+            if log == True:
+                logging.info(message)
 
     #funkce na psani debug do logu                                  
     def debug(self, message):
