@@ -609,6 +609,9 @@ class IpChanger(Tk):
                         reply = bytes('interval has to be number!\r\n', 'utf-8')
                         pass
                 elif rozdel[0] == 'changeip' and rozdel[1] == 'once' and rozdel[2] != '':
+                    print(rozdel[0])
+                    print(rozdel[1])
+                    print(rozdel[2])
                     try:
                         if int(rozdel[2]):
                             if args.multi is not None:
