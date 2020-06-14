@@ -24,7 +24,7 @@ eval "$(pyenv virtualenv-init -)"
 
 ### part3 - install python 3.4.10 with pyenv + install pip requirements
 - `exec $SHELL`
-- `env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.4.10`
+- `env PYTHON_CONFIGURE_OPTS="--enable-shared" ~/.pyenv/bin/pyenv install 3.4.10`
 - `pyenv global 3.4.10`
 - `python -m pip install -r requirements/pip-requirements.txt`
 
