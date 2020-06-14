@@ -617,7 +617,8 @@ class IpChanger(Tk):
                                 reply = b'tor server not running\r\n'        
                         else:
                             reply = b'definuj cislo portu proxy\r\n'
-                                 
+                    except:
+                        pass             
                 elif data == b'\r\n':
                     break
                     conn.close()
