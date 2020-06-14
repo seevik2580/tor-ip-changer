@@ -578,7 +578,7 @@ class IpChanger(Tk):
                     os.system(r'killall tor')
                     os.system(r'killall obfs4proxy')
                     os.system(r'killall tail')
-                    s.close()
+                    s.shutdown()
                     os._exit(1)
                 elif data == b'changeip once\r\n':
                     if self.bezi == 1:
