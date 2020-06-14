@@ -608,10 +608,10 @@ class IpChanger(Tk):
                     except ValueError:
                         reply = bytes('interval has to be number!\r\n', 'utf-8')
                         pass
-                elif rozdel[0] == 'changeip' and rozdel[1] == 'onceport' and rozdel[2] != '':
+                elif rozdel[0] == 'changeip' and rozdel[1] == 'onceport':
                     if args.multi is not None:
                         if self.bezi == 1:
-                            reply = b'changing ip once for port '+rozdel[2]+'\r\n'
+                            reply = b'changing ip once for port\r\n'
                             self.newIP()
                             self.IPandlatency()
                         else:
