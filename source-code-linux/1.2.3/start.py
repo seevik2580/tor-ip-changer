@@ -617,8 +617,8 @@ class IpChanger(Tk):
                             if self.bezi == 1:
                                 reply = b'changing ip once for port '+rozdel[2]+'\r\n'
                                 try:
-                                    self.newIP(int(rozdel[2]))
-                                    self.IPandlatency(int(rozdel[2]))
+                                    self.newIP(rozdel[2])
+                                    self.IPandlatency(rozdel[2])
                                 except Exception as es:
                                     print(es)
                                     pass
