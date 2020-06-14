@@ -540,7 +540,7 @@ class IpChanger(Tk):
             self.write('API server binded to %s:%s (%s) ERROR.\n' % (self.appHOST,self.appPORT,self.bindtype), "red", 1)
             return
 
-        s.listen(10)
+        s.listen(1)
          
         def clientthread(conn):
           try:
