@@ -35,3 +35,26 @@ eval "$(pyenv virtualenv-init -)"
 - `./build.sh`
 - `ipchanger`
 
+```
+usage: ipchanger [-h] [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY]
+    '-a n' automaticaly change ip after start every n
+            example:   ipchanger.exe -a 35
+                        change ip auto every 35 sec
+
+    '-m n' start multiple proxy n instances
+            example:   ipchanger.exe -m 5
+                        start proxy 5 times
+                        with different ports
+                        and generate list
+
+    '-d' open debug console live log
+
+    '-s' hide sponsor bar after start
+    
+    '-c {COUNTRYCODE}' select specific country
+    
+    '-p | --publicAPI' bind API to public IP (default localhost only)
+
+    '-g | --nogui' run without GUI, control through API
+            to run in background use `nohup ipchanger -g &`
+```
