@@ -616,7 +616,7 @@ class IpChanger(Tk):
                         if args.multi is not None:
                             if self.bezi == 1:
                                 reply = b'changing ip once for port '+rozdel[2]+'\r\n'
-                                self.newIP(rozdel[2])
+                                self.newIP()
                                 #self.IPandlatency(rozdel[2])
                             else:
                                 reply = b'tor server not running\r\n'        
