@@ -620,8 +620,9 @@ class IpChanger(Tk):
                                     try:
                                         self.newIP(int(rozdel[2]))
                                         self.IPandlatency(int(rozdel[2]))
-                                    except Exception as e:
-                                        self.write(e,'orange',1)
+                                    except Exception as es:
+                                        print(es)
+                                        pass
                                 else:
                                     reply = b'tor server not running\r\n'        
                             else:
