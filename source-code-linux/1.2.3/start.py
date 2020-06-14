@@ -550,17 +550,17 @@ class IpChanger(Tk):
             while True:
                 data = conn.recv(1024)  
                 reply = b'\r\nUsable commands:\r\n'
-                reply += b'help            | print usage\r\n'
-                reply += b'tor start       | start tor server\r\n'
-                reply += b'tor stop        | stop tor server\r\n'
-                reply += b'interval N      | set interval to N seconds\r\n'
-                reply += b'changeip start  | start autochanging ip\r\n'
-                reply += b'changeip stop   | stop autochanging ip\r\n'
-                reply += b'changeip once   | dont autochange, but change once\r\n'
-                reply += b'changeip once N | dont autochange, but change once\r\n'
+                reply += b'help                | print usage\r\n'
+                reply += b'tor start           | start tor server\r\n'
+                reply += b'tor stop            | stop tor server\r\n'
+                reply += b'interval N          | set interval to N seconds\r\n'
+                reply += b'changeip start      | start autochanging ip\r\n'
+                reply += b'changeip stop       | stop autochanging ip\r\n'
+                reply += b'changeip once       | dont autochange, but change once\r\n'
+                reply += b'changeip onceport N | dont autochange, but change once\r\n'
                 reply += b'                  and only specific proxy port eg: 9050\r\n'
-                reply += b'shutdown        | exit ipchanger and close all connections\r\n'
-                reply += b'exit            | close connection\r\n'
+                reply += b'shutdown            | exit ipchanger and close all connections\r\n'
+                reply += b'exit                | close connection\r\n'
                 rozdelit = '%s' % data.decode("utf-8")
                 rozdel = rozdelit.split(" ")
                 if data == b'exit\r\n':
@@ -608,7 +608,7 @@ class IpChanger(Tk):
                     except ValueError:
                         reply = bytes('interval has to be number!\r\n', 'utf-8')
                         pass
-                elif rozdel[0] == 'changeip' and rozdel[1] == 'once' and rozdel[2] != '':
+                elif rozdel[0] == 'changeip' and rozdel[1] == 'onceport' and rozdel[2] != '':
                     print(rozdel[0])
                     print(rozdel[1])
                     print(rozdel[2])
@@ -1196,7 +1196,7 @@ class IpChanger(Tk):
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
     def newIP(self, port=None):
-      print(port.decode("utf-8"))
+      print(port)
       self.controlport = 15000
       proxy = 9050
       self.write("-------------------------CHANGING-IP------------------------\n", "white", 1)  
@@ -1212,9 +1212,9 @@ class IpChanger(Tk):
 
         if port is not None:
             instanci = 1
-            proxy = int(port.decode("utf-8"))
-            newcontrolport = 15000 - 9050 + int(port.decode("utf-8"))
-            self.controlport.set(int(newkontrolport))
+            proxy = int(port)
+            newcontrolport = 15000 - 9050 + int(port)
+            self.controlport = int(newkontrolport)
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
