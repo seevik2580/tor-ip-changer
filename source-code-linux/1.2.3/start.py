@@ -612,14 +612,17 @@ class IpChanger(Tk):
                     try:
                         if int(rozdel[2]):
                             print(rozdel[2])
-                            if self.bezi == 1:
-                                reply = b'changing ip once for port '+rozdel[2]+'\r\n'
-                                self.newIP(rozdel[2])
-                                self.IPandlatency(rozdel[2])
+                            if args.multi is not None:
+                                if self.bezi == 1:
+                                    reply = b'changing ip once for port '+rozdel[2]+'\r\n'
+                                    self.newIP(rozdel[2])
+                                    self.IPandlatency(rozdel[2])
+                                else:
+                                    reply = b'tor server not running\r\n'        
                             else:
-                                reply = b'tor server not running\r\n'        
+                                reply = b'use only with ipchanger -m\r\n'
                         else:
-                            reply = b'definuj cislo portu proxy\r\n'
+                            reply = b'define proxy port number\r\n'
                     except Exception as e:
                         self.write(e,'orange',1)
                         pass             
