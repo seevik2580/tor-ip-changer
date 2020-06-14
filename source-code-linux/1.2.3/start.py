@@ -531,6 +531,8 @@ class IpChanger(Tk):
     #funkce na ovladani API skrz telnet
     def API(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
         
         try:
             s.bind((self.appHOST, self.appPORT))
@@ -578,8 +580,6 @@ class IpChanger(Tk):
                     os.system(r'killall tor')
                     os.system(r'killall obfs4proxy')
                     os.system(r'killall tail')
-                    s.close()
-                    s.shutdown()
                     os._exit(1)
                 elif data == b'changeip once\r\n':
                     if self.bezi == 1:
