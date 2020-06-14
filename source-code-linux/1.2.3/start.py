@@ -621,7 +621,7 @@ class IpChanger(Tk):
                         else:
                             reply = b'definuj cislo portu proxy\r\n'
                     except Exception as e:
-                        self.write(e,'orange',1)
+                        self.write("%s" % e,'orange',1)
                         pass             
                 elif data == b'\r\n':
                     break
