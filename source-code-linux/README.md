@@ -6,7 +6,7 @@
  
 ## dependency install:
 ### part1 - install curl + libs, authbind, tor, obfs4proxy, meek-client, ssl libs, stop tor service after install and allow to bind port 53 without root permission
-- `sudo apt install curl authbind tor obfs4proxy`
+- `sudo apt install curl authbind tor obfs4proxy psmisc`
 - `sudo dpkg -i requirements/meek-client_0.20+git20151006-1_amd64.deb`
 - `sudo systemctl disable tor`
 - `sudo systemctl stop tor`
@@ -22,11 +22,11 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-### part3 - install python 3.4.10 with pyenv + install pip requirements, pip needs openssl1.0 or installation crashes
+### part3 - install python 3.4.10 with pyenv and tkinter module + install pip requirements, pip needs openssl1.0 or installation crashes
 - `exec $SHELL`
 - `echo "deb [trusted=yes] http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list`
 - `sudo apt update`
-- `sudo apt install libssl1.0-dev`
+- `sudo apt install libssl1.0-dev tk-dev`
 - `env LDFLAGS=-L/usr/lib/openssl-1.0 CFLAGS="-DOPENSSL_NO_SSL3 -I/usr/include/openssl-1.0" PYTHON_CONFIGURE_OPTS="--enable-shared" ~/.pyenv/bin/pyenv install 3.4.10`
 - `pyenv global 3.4.10`
 - `sudo apt install libcurl4-openssl-dev libssl-dev`
