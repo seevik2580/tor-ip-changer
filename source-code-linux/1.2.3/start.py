@@ -586,13 +586,6 @@ class IpChanger(Tk):
                         self.IPandlatency()
                     else:
                         reply = b'tor server not running\r\n'
-                elif rozdel[1] == 'once' and rozdel[2] is not None:
-                    if self.bezi == 1:
-                        reply = b'changing ip once for port '+rozdel[2]+'\r\n'
-                        self.newIP(rozdel[2])
-                        self.IPandlatency(rozdel[2])
-                    else:
-                        reply = b'tor server not running\r\n'
                 elif data == b'changeip start\r\n':
                     if self.bezi == 1:
                         reply = b'start ip changing\r\n'
@@ -613,7 +606,13 @@ class IpChanger(Tk):
                     except ValueError:
                         reply = bytes('interval has to be number!\r\n', 'utf-8')
                         pass
-                        
+                elif rozdel[1] == 'once' and rozdel[2] is not None:
+                    if self.bezi == 1:
+                        reply = b'changing ip once for port '+rozdel[2]+'\r\n'
+                        self.newIP(rozdel[2])
+                        self.IPandlatency(rozdel[2])
+                    else:
+                        reply = b'tor server not running\r\n'        
                 elif data == b'\r\n':
                     break
                     conn.close()
