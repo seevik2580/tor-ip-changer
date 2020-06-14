@@ -1037,7 +1037,7 @@ class IpChanger(Tk):
         
         
     #funkce na zjisteni odezvy pro zjistenou IP adresu, nejdrive zavola zjisteni IP a nasledne provede overeni odezvy, a vypise vystup do aplikace        
-    def IPandlatency(self, port=None):      
+    def IPandlatency(self, port=9050):      
         if args.multi is not None:
           instanci = int(args.multi)
         else:
@@ -1198,7 +1198,7 @@ class IpChanger(Tk):
             self.progressbar["value"] = 0
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
-    def newIP(self, int(port=None)):
+    def newIP(self, port=9050):
       self.controlport = 15000
       proxy = 9050
       self.write("-------------------------CHANGING-IP------------------------\n", "white", 1)  
