@@ -1038,7 +1038,7 @@ class IpChanger(Tk):
         
         if port is not None:
             instanci = 1
-            proxy = port
+            proxy = int(port)
             print(proxy)
 
         def fetching(proxy):
