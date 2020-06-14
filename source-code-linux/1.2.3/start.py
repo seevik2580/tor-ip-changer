@@ -555,6 +555,8 @@ class IpChanger(Tk):
                 reply += b'changeip start | start autochanging ip\r\n'
                 reply += b'changeip stop  | stop autochanging ip\r\n'
                 reply += b'changeip once  | dont autochange, but change once\r\n'
+                reply += b'changeip port  | dont autochange, but change once\r\n'
+                reply += b'                 and only specific proxy port eg: 9050\r\n'
                 reply += b'shutdown       | exit ipchanger and close all connections\r\n'
                 reply += b'exit           | close connection\r\n'
                 rozdelit = '%s' % data.decode("utf-8")
