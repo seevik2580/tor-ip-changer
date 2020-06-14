@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 #import vsech potrebnych modulu
-import tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, re, logging, os,sys, multiprocessing, subprocess, pycurl, io, webbrowser,argparse, urllib3
+import tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, re, logging, os,sys, multiprocessing, subprocess, pycurl, io, webbrowser,argparse, urllib3, signal
 from tkinter import *
 from timeit import default_timer as timer
 from datetime import datetime
@@ -30,12 +30,14 @@ c = 1
 
 
 #nastavitelne argumenty programku
-parser = argparse.ArgumentParser()  
+parser = argparse.ArgumentParser(add_help=False)  
 parser.add_argument("-a", "--auto", type=int, required=False, help="-a 10   change ip every 10 seconds after program start")
 parser.add_argument("-d", "--debug", help="start debug logging", action='store_true')
 parser.add_argument("-m", "--multi", type=int, required=False, help="-m 5   run 5 different TOR instances", choices=range(1,101))
 parser.add_argument("-p", "--publicAPI", action='store_true', required=False, help="bind API to 0.0.0.0 instead of 127.0.0.1")
 parser.add_argument("-c", "--country", type=str, required=False, help="-c {cz}   select czech republic country")       #for future update
+parser.add_argument("-h", "--help", help="this help", action='store_true',required=False)
+parser.add_argument("-g", "--nogui", help="run without GUI - control through API", action='store_true',required=False)
 
 args = parser.parse_args()   
 
@@ -144,7 +146,37 @@ class IpChanger(Tk):
         self.countries = []
         self.countries = ('{random}','{ac}','{af}','{ax}','{al}','{dz}','{ad}','{ao}','{ai}','{aq}','{ag}','{ar}','{am}','{aw}','{au}','{at}','{az}','{bs}','{bh}','{bd}','{bb}','{by}','{be}','{bz}','{bj}','{bm}','{bt}','{bo}','{ba}','{bw}','{bv}','{br}','{io}','{vg}','{bn}','{bg}','{bf}','{bi}','{kh}','{cm}','{ca}','{cv}','{ky}','{cf}','{td}','{cl}','{cn}','{cx}','{cc}','{co}','{km}','{cg}','{cd}','{ck}','{cr}','{ci}','{hr}','{cu}','{cy}','{cz}','{dk}','{dj}','{dm}','{do}','{tp}','{ec}','{eg}','{sv}','{gq}','{ee}','{et}','{fk}','{fo}','{fj}','{fi}','{fr}','{fx}','{gf}','{pf}','{tf}','{ga}','{gm}','{ge}','{de}','{gh}','{gi}','{gr}','{gl}','{gd}','{gp}','{gu}','{gt}','{gn}','{gw}','{gy}','{ht}','{hm}','{hn}','{hk}','{hu}','{is}','{in}','{id}','{ir}','{iq}','{ie}','{im}','{il}','{it}','{jm}','{jp}','{jo}','{kz}','{ke}','{ki}','{kp}','{kr}','{kw}','{kg}','{la}','{lv}','{lb}','{ls}','{lr}','{ly}','{li}','{lt}','{lu}','{mo}','{mk}','{mg}','{mw}','{my}','{mv}','{ml}','{mt}','{mh}','{mq}','{mr}','{mu}','{yt}','{mx}','{fm}','{md}','{mc}','{mn}','{me}','{ms}','{ma}','{mz}','{mm}','{na}','{nr}','{np}','{an}','{nl}','{nc}','{nz}','{ni}','{ne}','{ng}','{nu}','{nf}','{mp}','{no}','{om}','{pk}','{pw}','{ps}','{pa}','{pg}','{py}','{pe}','{ph}','{pn}','{pl}','{pt}','{pr}','{qa}','{re}','{ro}','{ru}','{rw}','{ws}','{sm}','{st}','{sa}','{uk}','{sn}','{rs}','{sc}','{sl}','{sg}','{sk}','{si}','{sb}','{so}','{as}','{za}','{gs}','{su}','{es}','{lk}','{sh}','{kn}','{lc}','{pm}','{vc}','{sd}','{sr}','{sj}','{sz}','{se}','{ch}','{sy}','{tw}','{tj}','{tz}','{th}','{tg}','{tk}','{to}','{tt}','{tn}','{tr}','{tm}','{tc}','{tv}','{ug}','{ua}','{ae}','{gb}','{uk}','{us}','{um}','{uy}','{uz}','{vu}','{va}','{ve}','{vn}','{vi}','{wf}','{eh}','{ye}','{zm}','{zw}')         
         
+        if args.help is True:
+            print("""usage: ipchanger [-h] [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY]
+    '-a n' automaticaly change ip after start every n
+            example:   ipchanger.exe -a 35
+                        change ip auto every 35 sec
+
+    '-m n' start multiple proxy n instances
+            example:   ipchanger.exe -m 5
+                        start proxy 5 times
+                        with different ports
+                        and generate list
+
+    '-d' open debug console live log
+
+    '-s' hide sponsor bar after start
+    
+    '-c {COUNTRYCODE}' select specific country
+    
+    '-p | --publicAPI' bind API to public IP (default localhost only)
+
+    '-g | --nogui' run without GUI, control through API
+            to run in background use `nohup ipchanger -g &`
+            """)
+            os._exit(1)
+
         
+
+        if args.nogui is True:
+            self.withdraw()
+
+
         if args.multi is not None:
             self.maxfailed = args.multi + 3
             for i in range(args.multi):
@@ -204,7 +236,6 @@ class IpChanger(Tk):
         if args.debug is True:
             _thread.start_new_thread(self.showlog, ())
         
-    
     #funkce na spusteni overeni chybejicich souboru pro chod TORa
     def startcheck(self):
         self.progressbar['maximum'] = 100
@@ -524,6 +555,7 @@ class IpChanger(Tk):
                 reply += b'changeip start | start autochanging ip\r\n'
                 reply += b'changeip stop  | stop autochanging ip\r\n'
                 reply += b'changeip once  | dont autochange, but change once\r\n'
+                reply += b'shutdown       | exit ipchanger and close all connections\r\n'
                 reply += b'exit           | close connection\r\n'
                 rozdelit = '%s' % data.decode("utf-8")
                 rozdel = rozdelit.split(" ")
@@ -537,6 +569,14 @@ class IpChanger(Tk):
                 elif data == b'tor stop\r\n':
                     reply = b'stopping tor server\r\n'
                     self.stoptor()
+                elif data == b'shutdown\r\n':
+                    reply = b'stopping tor server\r\n'
+                    reply = b'exiting\r\n'
+                    self.stoptor()
+                    os.system(r'killall tor')
+                    os.system(r'killall obfs4proxy')
+                    os.system(r'killall tail')
+                    os._exit(1)
                 elif data == b'changeip once\r\n':
                     if self.bezi == 1:
                         reply = b'changing ip once\r\n'

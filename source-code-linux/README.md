@@ -28,8 +28,10 @@ eval "$(pyenv virtualenv-init -)"
 - `pyenv global 3.4.10`
 - `python -m pip install -r requirements/pip-requirements.txt`
 
-### run tor-ip-changer
+### run tor-ip-changer with python
 - `python ipchanger.py`
 
-### compile and install tor-ip-changer
+### compile, install and run tor-ip-changer
 - `./build.sh`
+- `ipchanger`
+
