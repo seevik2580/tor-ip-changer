@@ -1046,7 +1046,7 @@ class IpChanger(Tk):
         proxy = 9050   
         languagenumber = 0
         
-        if port is not None:
+        if port != 9050:
             instanci = 1
             proxy = port
 
@@ -1212,7 +1212,7 @@ class IpChanger(Tk):
         else:
             instanci = 1
 
-        if port is not None:
+        if port != 9050:
             instanci = 1
             proxy = port
             self.controlport = 15000 - 9050 + port
