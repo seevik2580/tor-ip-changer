@@ -616,12 +616,8 @@ class IpChanger(Tk):
                         if args.multi is not None:
                             if self.bezi == 1:
                                 reply = b'changing ip once for port '+rozdel[2]+'\r\n'
-                                try:
-                                    self.newIP(rozdel[2])
-                                    self.IPandlatency(rozdel[2])
-                                except Exception as es:
-                                    print(es)
-                                    pass
+                                self.newIP(rozdel[2])
+                                #self.IPandlatency(rozdel[2])
                             else:
                                 reply = b'tor server not running\r\n'        
                         else:
@@ -1200,7 +1196,7 @@ class IpChanger(Tk):
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
     def newIP(self, port=None):
-      print(port)
+      print(port.decode("utf-8"))
       self.controlport = 15000
       proxy = 9050
       self.write("-------------------------CHANGING-IP------------------------\n", "white", 1)  
@@ -1216,8 +1212,8 @@ class IpChanger(Tk):
 
         if port is not None:
             instanci = 1
-            proxy = int(port)
-            newcontrolport = 15000 - 9050 + int(port)
+            proxy = int(port.decode("utf-8"))
+            newcontrolport = 15000 - 9050 + int(port.decode("utf-8"))
             self.controlport.set(int(newkontrolport))
         for i in range(instanci):    
             try:
