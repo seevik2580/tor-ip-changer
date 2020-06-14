@@ -1032,7 +1032,7 @@ class IpChanger(Tk):
         
         
     #funkce na zjisteni odezvy pro zjistenou IP adresu, nejdrive zavola zjisteni IP a nasledne provede overeni odezvy, a vypise vystup do aplikace        
-    def IPandlatency(self):      
+    def IPandlatency(self, port=None):      
         if args.multi is not None:
           instanci = int(args.multi)
         else:
@@ -1041,6 +1041,10 @@ class IpChanger(Tk):
         proxy = 9050   
         languagenumber = 0
         
+        if port is not None:
+            instanci = 1
+            proxy = port
+
         def fetching(proxy):
             languagenumber = proxy - 9050
             language = eval('self.lang_' + str(languagenumber) + '.get()')
@@ -1189,7 +1193,7 @@ class IpChanger(Tk):
             self.progressbar["value"] = 0
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
-    def newIP(self):
+    def newIP(self, port=None):
       self.controlport = 15000
       proxy = 9050
       self.write("-------------------------CHANGING-IP------------------------\n", "white", 1)  
@@ -1202,6 +1206,12 @@ class IpChanger(Tk):
             instanci = int(args.multi)
         else:
             instanci = 1
+
+        if port is not None:
+            instanci = 1
+            proxy = port
+            self.controlport = 15000 - 9050 + port
+
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
