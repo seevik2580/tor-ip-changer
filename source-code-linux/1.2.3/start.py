@@ -93,7 +93,7 @@ class IpChanger(Tk):
         
         #prazdne neviditelne tlacitko pro odsazeni
         self.blankmenu = Menu(self, tearoff=0)
-        self.menubar.add_cascade(label="".ljust(34), menu=self.blankmenu, state="disabled")
+        self.menubar.add_cascade(label="".ljust(12), menu=self.blankmenu, state="disabled")
 
         #definice pro menu Help
         self.helpmenu = Menu(self, tearoff=0)
@@ -449,10 +449,6 @@ class IpChanger(Tk):
             if not os.path.exists(help):
                 self.download("https://github.com/seevik2580/tor-ip-changer/raw/master/dist/%s/%s" % (version,help), 1)
         
-            SW_HIDE = 0
-            info = subprocess.STARTUPINFO()
-            info.dwFlags = subprocess.STARTF_USESHOWWINDOW
-            info.wShowWindow = SW_HIDE
             os.system(r'gedit help.txt')
         except:
             self.write("Can't open help.txt \n", "orange", 1)
