@@ -609,22 +609,15 @@ class IpChanger(Tk):
                         reply = bytes('interval has to be number!\r\n', 'utf-8')
                         pass
                 elif rozdel[0] == 'changeip' and rozdel[1] == 'onceport' and rozdel[2] != '':
-                    print(rozdel[0])
-                    print(rozdel[1])
-                    print(rozdel[2])
-                    try:
-                        if args.multi is not None:
-                            if self.bezi == 1:
-                                reply = b'changing ip once for port '+rozdel[2]+'\r\n'
-                                self.newIP()
-                                #self.IPandlatency(rozdel[2])
-                            else:
-                                reply = b'tor server not running\r\n'        
+                    if args.multi is not None:
+                        if self.bezi == 1:
+                            reply = b'changing ip once for port '+rozdel[2]+'\r\n'
+                            self.newIP()
+                            self.IPandlatency()
                         else:
-                            reply = b'use only with ipchanger -m\r\n'
-                    except Exception as e:
-                        self.write(e,'orange',1)
-                        pass             
+                            reply = b'tor server not running\r\n'        
+                    else:
+                        reply = b'use only with ipchanger -m\r\n'
                 elif data == b'\r\n':
                     break
                     conn.close()
