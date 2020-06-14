@@ -548,17 +548,17 @@ class IpChanger(Tk):
             while True:
                 data = conn.recv(1024)  
                 reply = b'\r\nUsable commands:\r\n'
-                reply += b'help           | print usage\r\n'
-                reply += b'tor start      | start tor server\r\n'
-                reply += b'tor stop       | stop tor server\r\n'
-                reply += b'interval N     | set interval to N seconds\r\n'
-                reply += b'changeip start | start autochanging ip\r\n'
-                reply += b'changeip stop  | stop autochanging ip\r\n'
-                reply += b'changeip once  | dont autochange, but change once\r\n'
-                reply += b'changeip port  | dont autochange, but change once\r\n'
-                reply += b'                 and only specific proxy port eg: 9050\r\n'
-                reply += b'shutdown       | exit ipchanger and close all connections\r\n'
-                reply += b'exit           | close connection\r\n'
+                reply += b'help            | print usage\r\n'
+                reply += b'tor start       | start tor server\r\n'
+                reply += b'tor stop        | stop tor server\r\n'
+                reply += b'interval N      | set interval to N seconds\r\n'
+                reply += b'changeip start  | start autochanging ip\r\n'
+                reply += b'changeip stop   | stop autochanging ip\r\n'
+                reply += b'changeip once   | dont autochange, but change once\r\n'
+                reply += b'changeip once N | dont autochange, but change once\r\n'
+                reply += b'                  and only specific proxy port eg: 9050\r\n'
+                reply += b'shutdown        | exit ipchanger and close all connections\r\n'
+                reply += b'exit            | close connection\r\n'
                 rozdelit = '%s' % data.decode("utf-8")
                 rozdel = rozdelit.split(" ")
                 if data == b'exit\r\n':
@@ -584,6 +584,13 @@ class IpChanger(Tk):
                         reply = b'changing ip once\r\n'
                         self.newIP()
                         self.IPandlatency()
+                    else:
+                        reply = b'tor server not running\r\n'
+                elif rozdel[1] == 'once' and rozdel[2] is not None:
+                    if self.bezi == 1:
+                        reply = b'changing ip once for port '+rozdel[2]+'\r\n'
+                        self.newIP(rozdel[2])
+                        self.IPandlatency(rozdel[2])
                     else:
                         reply = b'tor server not running\r\n'
                 elif data == b'changeip start\r\n':
