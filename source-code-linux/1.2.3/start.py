@@ -615,9 +615,8 @@ class IpChanger(Tk):
                                 if self.bezi == 1:
                                     reply = b'changing ip once for port '+rozdel[2]+'\r\n'
                                     try:
-                                        _thread.start_new_thread(clientthread ,(self.newIP(int(rozdel[2])),))
-                                        _thread.start_new_thread(clientthread ,(self.IPandlatency(int(rozdel[2])),))
-                                        
+                                        self.newIP(int(rozdel[2]))
+                                        self.IPandlatency(int(rozdel[2]))
                                     except Exception as e:
                                         self.write(e,'orange',1)
                                 else:
@@ -1199,7 +1198,7 @@ class IpChanger(Tk):
             self.progressbar["value"] = 0
   
     #funkce na zmenu IP adresy, odpojeni predeslych circuit a spojeni        
-    def newIP(self, port=None):
+    def newIP(self, int(port=None)):
       self.controlport = 15000
       proxy = 9050
       self.write("-------------------------CHANGING-IP------------------------\n", "white", 1)  
@@ -1217,7 +1216,7 @@ class IpChanger(Tk):
             instanci = 1
             proxy = port
             self.controlport = 15000 - 9050 + port
-
+            print(self.controlport)
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
