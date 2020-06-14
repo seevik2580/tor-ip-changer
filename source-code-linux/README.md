@@ -9,12 +9,16 @@
 - `sudo dpkg -i requirements/meek-client_0.20+git20151006-1_amd64.deb`
 - `sudo systemctl stop tor`
 - `curl https://pyenv.run | bash`
+
+
 - add at the end of ~/.bashrc
 ```
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
+
+
 - `exec $SHELL`
 - `env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.4.10`
 - `pyenv global 3.4.10`
