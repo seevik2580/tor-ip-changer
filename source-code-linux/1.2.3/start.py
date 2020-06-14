@@ -640,7 +640,7 @@ class IpChanger(Tk):
         if eval("self.useBridges_%s.get()" % str(identify)) == 1:
             filebridges = 'bridges.txt'
             if not os.path.exists("Tor/%s" % filebridges):
-                self.download("https://github.com/seevik2580/tor-ip-changer/raw/master/tor/%s" % (filebridges), None, "Tor")
+                self.download("https://github.com/seevik2580/tor-ip-changer/raw/master/tor/%s" % (filebridges), 0, "Tor")
             with open('Tor/bridges.txt', 'r') as f:
                 self.bridge = '--UseBridges 1 '
                 self.bridge += '--ClientTransportPlugin "obfs2,obfs3,obfs4 exec /usr/bin/obfs4proxy managed" '
