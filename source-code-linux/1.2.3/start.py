@@ -611,7 +611,6 @@ class IpChanger(Tk):
                 elif rozdel[0] == 'changeip' and rozdel[1] == 'once' and int(rozdel[2]):
                     try:
                         if int(rozdel[2]):
-                            print(rozdel[2])
                             if args.multi is not None:
                                 if self.bezi == 1:
                                     reply = b'changing ip once for port '+rozdel[2]+'\r\n'
@@ -619,7 +618,7 @@ class IpChanger(Tk):
                                         self.newIP(rozdel[2])
                                         self.IPandlatency(rozdel[2])
                                     except Exception as e:
-                                        reply = b'%s\r\n' % e
+                                        self.write(e,'orange',1)
                                 else:
                                     reply = b'tor server not running\r\n'        
                             else:
