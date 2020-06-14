@@ -21,8 +21,7 @@ export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-- run
-- `exec $SHELL`
+- run `exec $SHELL` to setup new $PATH
 ### part3 - install python 3.4.10 with pyenv and tkinter module + install pip requirements, installation of pip needs openssl1.0 or installation crashes
 
 - `echo "deb [trusted=yes] http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list`
