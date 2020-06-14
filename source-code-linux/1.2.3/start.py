@@ -1039,6 +1039,7 @@ class IpChanger(Tk):
         if port is not None:
             instanci = 1
             proxy = port
+            print(proxy)
 
         def fetching(proxy):
             languagenumber = proxy - 9050
