@@ -39,6 +39,12 @@ eval "$(pyenv virtualenv-init -)"
 - `./build.sh`
 - `ipchanger`
 
+### run on linux without display (console only)
+- `sudo apt install xvfb`
+- `export DISPLAY=:1`
+- `Xvfb :1 -screen 0 1024x768x16 &`
+- `ipchanger --nogui`
+
 ```
 usage: ipchanger [-h] [-a n] [-d] [-m 1-100] [-p] [-c COUNTRY]
     '-a n' automaticaly change ip after start every n
