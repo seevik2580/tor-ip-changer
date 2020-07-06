@@ -1,7 +1,7 @@
 # tor-ip-changer
 - request new identity every X seconds interval using TOR client
 
-##### Tor ipchanger does not override router ip, it just create proxy which is connected inside TOR network which you can use to hide your real ip address for browser or apps that supports socks4/5 type proxy, and you can change that IP inside TOR network every X. then you have to decide which apps will use this proxy to be anonymized. For most cases its just for browsers, but you can use third party software to co-operate with TOR IPchanger to anonymize other apps, not just browsers, or even whole computer with software like Proxifier.`
+##### Tor ipchanger does not override router ip, it just create proxy which is connected inside TOR network which you can use to hide your real ip address for browser or apps that supports socks4/5 type proxy, and you can change that IP inside TOR network every X. For most cases its just for browsers, but you can use third party software to co-operate with TOR IPchanger to anonymize not just browsers but also other apps or even whole computer with software like Proxifier.`
 
 # example of usage:
 
