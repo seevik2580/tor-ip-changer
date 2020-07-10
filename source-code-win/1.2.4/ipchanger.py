@@ -15,5 +15,4 @@ if __name__ == '__main__':
         subprocess.Popen(r'taskkill /f /im tor.exe', startupinfo=info)
         subprocess.Popen(r'taskkill /f /im obfs4proxy.exe', startupinfo=info)
         subprocess.Popen(r'taskkill /f /im tail.exe', startupinfo=info)
-        #subprocess.Popen(r'taskkill /f /im ipchanger.exe', startupinfo=info)
         os._exit(1)

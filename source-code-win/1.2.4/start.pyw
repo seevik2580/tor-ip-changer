@@ -12,7 +12,7 @@ logging.getLogger("urllib3").setLevel(logging.WARNING)
 urllib3.disable_warnings()
 
 #verze programku + doplnky
-version = "1.2.3"
+version = "1.2.4"
 startchanger = timer()
 directory = "Logs"
 datadirectory = "Data"
@@ -139,10 +139,16 @@ class IpChanger(Tk):
         self.countries = []
         self.countries = ('{random}','{ac}','{af}','{ax}','{al}','{dz}','{ad}','{ao}','{ai}','{aq}','{ag}','{ar}','{am}','{aw}','{au}','{at}','{az}','{bs}','{bh}','{bd}','{bb}','{by}','{be}','{bz}','{bj}','{bm}','{bt}','{bo}','{ba}','{bw}','{bv}','{br}','{io}','{vg}','{bn}','{bg}','{bf}','{bi}','{kh}','{cm}','{ca}','{cv}','{ky}','{cf}','{td}','{cl}','{cn}','{cx}','{cc}','{co}','{km}','{cg}','{cd}','{ck}','{cr}','{ci}','{hr}','{cu}','{cy}','{cz}','{dk}','{dj}','{dm}','{do}','{tp}','{ec}','{eg}','{sv}','{gq}','{ee}','{et}','{fk}','{fo}','{fj}','{fi}','{fr}','{fx}','{gf}','{pf}','{tf}','{ga}','{gm}','{ge}','{de}','{gh}','{gi}','{gr}','{gl}','{gd}','{gp}','{gu}','{gt}','{gn}','{gw}','{gy}','{ht}','{hm}','{hn}','{hk}','{hu}','{is}','{in}','{id}','{ir}','{iq}','{ie}','{im}','{il}','{it}','{jm}','{jp}','{jo}','{kz}','{ke}','{ki}','{kp}','{kr}','{kw}','{kg}','{la}','{lv}','{lb}','{ls}','{lr}','{ly}','{li}','{lt}','{lu}','{mo}','{mk}','{mg}','{mw}','{my}','{mv}','{ml}','{mt}','{mh}','{mq}','{mr}','{mu}','{yt}','{mx}','{fm}','{md}','{mc}','{mn}','{me}','{ms}','{ma}','{mz}','{mm}','{na}','{nr}','{np}','{an}','{nl}','{nc}','{nz}','{ni}','{ne}','{ng}','{nu}','{nf}','{mp}','{no}','{om}','{pk}','{pw}','{ps}','{pa}','{pg}','{py}','{pe}','{ph}','{pn}','{pl}','{pt}','{pr}','{qa}','{re}','{ro}','{ru}','{rw}','{ws}','{sm}','{st}','{sa}','{uk}','{sn}','{rs}','{sc}','{sl}','{sg}','{sk}','{si}','{sb}','{so}','{as}','{za}','{gs}','{su}','{es}','{lk}','{sh}','{kn}','{lc}','{pm}','{vc}','{sd}','{sr}','{sj}','{sz}','{se}','{ch}','{sy}','{tw}','{tj}','{tz}','{th}','{tg}','{tk}','{to}','{tt}','{tn}','{tr}','{tm}','{tc}','{tv}','{ug}','{ua}','{ae}','{gb}','{uk}','{us}','{um}','{uy}','{uz}','{vu}','{va}','{ve}','{vn}','{vi}','{wf}','{eh}','{ye}','{zm}','{zw}')         
         
+        def get_random_alphanumeric_string(length):
+            letters = string.ascii_lowercase
+            result_str = ''.join(random.choice(letters) for i in range(length))
+            return result_str
         
         if args.multi is not None:
             self.maxfailed = args.multi + 3
             for i in range(args.multi):
+                exec('self.controlPassword_' + str(i) + ' = StringVar()')  
+                exec('self.controlPassword_' + str(i) + '.set("' + get_random_alphanumeric_string(16) + '")')
                 exec('self.lang_' + str(i) + ' = StringVar()')  
                 if args.country is not None:
                     
@@ -152,11 +158,11 @@ class IpChanger(Tk):
                 
                 exec('self.useBridges_' + str(i) + ' = BooleanVar()')
                 
-                
-                
         else:
             self.maxfailed = 3
             self.lang_0 = StringVar()
+            self.controlPassword_0 = StringVar()
+            self.controlPassword_0.set(get_random_alphanumeric_string(16))
             if args.country is not None:
                 self.lang_0.set(args.country)
             else:
@@ -661,6 +667,22 @@ class IpChanger(Tk):
             self.write('using direct connection. \n', "red", 1)
             return self.bridge
 
+    def generateControlPasswordHash(self, password, identify=None):
+        SW_HIDE = 0
+        info = subprocess.STARTUPINFO()
+        info.dwFlags = subprocess.STARTF_USESHOWWINDOW
+        info.wShowWindow = SW_HIDE
+        out = subprocess.check_output('Tor/tor.exe --quiet --hash-password "%s"' % (password), startupinfo=info)
+        
+        exec('self.controlPasswordHash_' + str(identify) + ' = StringVar()')  
+        exec('self.controlPasswordHash_' + str(identify) + '.set(out.decode("utf-8").rstrip())')  
+        
+    def get_controlPasswordHash(self, identify=None):
+        return eval("self.controlPasswordHash_%s.get()" % identify)
+
+    def get_controlPassword(self, identify=None):
+        return eval("self.controlPassword_%s.get()" % identify)
+        
     #funkce multiinstanci tora        
     def multiTor(self, identify=None):
         self.logtorm = datetime.now().strftime('Logs/tor_%Y_%m_%d_%H_%M_%S.txt')
@@ -670,11 +692,12 @@ class IpChanger(Tk):
         info = subprocess.STARTUPINFO()
         info.dwFlags = subprocess.STARTF_USESHOWWINDOW
         info.wShowWindow = SW_HIDE
+        exec('self.generateControlPasswordHash(self.controlPassword_' + str(identify) + '.get(), str(identify))')  
         if eval("self.lang_%s.get()" % str(identify)) == "{random}":
-            subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1' % (self.bridge, self.control,self.proxy,self.data), startupinfo=info, stdout = open(files, 'w'))
+            subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "%s" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1' % (self.bridge, self.get_controlPasswordHash(identify),self.control,self.proxy,self.data), startupinfo=info, stdout = open(files, 'w'))
         else:
             language = eval("self.lang_%s.get()" % str(identify))
-            subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s' % (self.bridge, self.control,self.proxy,self.data,language), startupinfo=info, stdout = open(files, 'w'))                
+            subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "%s" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s' % (self.bridge, self.get_controlPasswordHash(identify),self.control,self.proxy,self.data,language), startupinfo=info, stdout = open(files, 'w'))                
         
         self.control = self.control + 1
         self.proxy = self.proxy + 1
@@ -693,14 +716,15 @@ class IpChanger(Tk):
         info = subprocess.STARTUPINFO()
         info.dwFlags = subprocess.STARTF_USESHOWWINDOW
         info.wShowWindow = SW_HIDE
-        key = self.ident   
+        key = self.ident
+        self.generateControlPasswordHash(self.controlPassword_0.get(), 0)
         if args.multi is not None:
             self.write("TOR server %s starting " % self.b, "green", 1)
             self.bridges('0')
             if self.lang_0.get() == "{random}":
-                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1' % (self.bridge, self.control,self.proxy,self.data), startupinfo=info, stdout = open(file, 'w'))
+                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "%s" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1' % (self.bridge, self.get_controlPasswordHash('0'), self.control,self.proxy,self.data), startupinfo=info, stdout = open(file, 'w'))
             else:
-                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s' % (self.bridge, self.control,self.proxy,self.data,self.lang_0.get()), startupinfo=info, stdout = open(file, 'w'))
+                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "%s" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s' % (self.bridge, self.get_controlPasswordHash('0'), self.control,self.proxy,self.data,self.lang_0.get()), startupinfo=info, stdout = open(file, 'w'))
         
             self.control = self.control + 1
             self.proxy = self.proxy + 1
@@ -719,10 +743,11 @@ class IpChanger(Tk):
             self.write("TOR server starting ", "green", 1)
             self.bridges('0')
             self.write("Please wait ... \n", "green", 1)
+            #self.write(self.controlPassword_0.get(), "orange", 1)
             if self.lang_0.get() == "{random}":
-                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1' % (self.bridge, self.control,self.proxy,self.data), startupinfo=info, stdout = open(file, 'w'))
+                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "%s" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1' % (self.bridge, self.get_controlPasswordHash('0'), self.control,self.proxy,self.data), startupinfo=info, stdout = open(file, 'w'))
             else:
-                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "16:BA0E52DF882381A2609FF0E3D1C3B9F78C55375AEE5D7EEF9B39C4EA76" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s' % (self.bridge, self.control,self.proxy,self.data,self.lang_0.get()), startupinfo=info, stdout = open(file, 'w'))
+                subprocess.Popen(r'Tor/tor.exe %s --RunAsDaemon 1 --CookieAuthentication 0 --SocksPolicy "accept *" --HashedControlPassword "%s" --ControlPort %s --SocksPort 0.0.0.0:%s --DataDirectory %s --log notice --AvoidDiskWrites 1 --SafeLogging 0 --GeoIPExcludeUnknown 1 --GeoIPFile Tor/geoip --GeoIPv6File Tor/geoip6 --DNSport 53 --AutomapHostsSuffixes .onion --AutomapHostsOnResolve 1 --StrictNodes 1 --ExitNodes %s' % (self.bridge, self.get_controlPasswordHash('0'), self.control,self.proxy,self.data,self.lang_0.get()), startupinfo=info, stdout = open(file, 'w'))
         timeout = 0
         count = 1    
         while not timeout==240 and key == self.ident:
@@ -1147,14 +1172,18 @@ class IpChanger(Tk):
             instanci = int(args.multi)
         else:
             instanci = 1
+
+        identify = 0
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 s.settimeout(2)
                 s.connect((host, self.controlport))
-                s.send(("AUTHENTICATE \"supertajneheslo\"").encode('ascii') + b"\r\n")
+                authcmd = 'AUTHENTICATE "%s"' % self.get_controlPassword(identify)
+                s.send((authcmd).encode('utf-8') + b"\r\n")
                 s.send(("GETINFO circuit-status").encode('ascii') + b"\r\n")
                 circ = s.recv(8192).decode("utf-8")
+                
                 try:
                     with open("circ.txt", "w") as f:
                         f.write(circ)  
@@ -1200,6 +1229,7 @@ class IpChanger(Tk):
             self.controlport = self.controlport + 1
             exec('self.proxystatus_' + str(proxy) + ' = status')
             proxy = proxy + 1
+            identify = identify + 1 
         
         self.controlport = 15000
         proxy = 9050        
