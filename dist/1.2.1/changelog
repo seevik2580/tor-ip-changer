@@ -1,0 +1,20 @@
+************************************************************
+Changelog: v1.2.1
+************************************************************
+Added:   
+   Bridges. (Options > Settings) - for now only obfs 1,2,3,4
+         or edit Tor/bridges.txt to insert your obfs bridges
+         default will be downloaded from github
+   Better anonymity.
+************************************************************
+Fixed:
+   often Fetching ip timeout. (i hope :D)
+************************************************************
+Changed: 
+   new Fetching ip mechanism.
+   increased timeout from 120 to 240 secs for Tor start 
+************************************************************
+Thanks:
+   sponsor Altnet s.r.o. ISP provider in Czech republic
+   Skvely.net®, banner will be visible until 01/11/2019
+************************************************************

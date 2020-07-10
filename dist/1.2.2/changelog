@@ -1,0 +1,34 @@
+************************************************************
+Changelog: v1.2.2
+************************************************************
+Added:   
+   API - you can now telnet to port 14999 and use ipchanger 
+         with your own code
+         (thanks to github.com/deshudiosh for this idea)
+         in default API can be accessed only from
+         127.0.0.1
+         if you create shortcut with -p | --publicAPI
+         then API can be accessed from 0.0.0.0
+         *******************************************
+         telnet 127.0.0.1 14999
+         *******************************************
+         help              | print usage
+         tor start         | start tor server
+         tor stop          | stop tor server
+         interval N        | set interval to N
+         changeip start    | start autochanging ip
+         changeip stop     | stop autochanging ip
+         changeip once     | just change ip once
+         exit              | close connection
+         *******************************************
+************************************************************
+Removed:
+   Checking internet connection.
+************************************************************
+Changed: 
+   Check for update.
+************************************************************
+Thanks:
+   sponsor Altnet s.r.o. ISP provider in Czech republic
+   Skvely.net®, banner will be visible until 01/11/2019
+************************************************************

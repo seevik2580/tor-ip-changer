@@ -1,0 +1,19 @@
+************************************************************
+Changelog: v1.2.3
+************************************************************
+Added:
+    + project open-sourced
+    + change country with argument -c {COUNTRYCODE}
+
+************************************************************
+Removed:
+    - sponsor show/hide button
+    - sponsor bar
+
+************************************************************
+Changed: 
+    + show API binded with port number
+    - show API binded
+    + geoip files downloaded from torproject repo directly
+
+************************************************************

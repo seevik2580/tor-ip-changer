@@ -1,0 +1,30 @@
+************************************************************
+Changelog: v1.2.0
+************************************************************
+Added:   
+   Progress bar indicator
+   Better anonymity 
+   Country selection
+   Autochange after program start
+   TOR DNS server @ 127.0.0.1:53 
+   .onion domains, need TOR DNS or DNS requests via socks5
+   Multiproxy
+************************************************************
+Fixed:
+   Socket unexpected timeout
+   TOR switcher crashed after while
+   Access Violation c0000005
+************************************************************
+Changed: 
+   User interface
+   Better logging
+   Start TOR timeout to 120 seconds
+   Close old TOR circuits before new IP
+************************************************************
+Removed: 
+   Configure browser button (too much bugy)
+************************************************************
+Thanks:
+   new sponsor Altnet s.r.o. ISP provider in Czech republic
+   Skvely.net®, banner will be visible until 01/11/2019
+************************************************************
