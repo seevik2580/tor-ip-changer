@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 #import vsech potrebnych modulu
-import tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, re, logging, os,sys, multiprocessing, subprocess, pycurl, io, webbrowser,argparse, urllib3
+import tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, re, logging, os,sys, multiprocessing, subprocess, pycurl, io, webbrowser,argparse, urllib3, string
 from tkinter import *
 from timeit import default_timer as timer
 from datetime import datetime
