@@ -20,6 +20,8 @@
 
 ![](screenshots/2.png)
 
+![](screenshots/3.png)
+
 ```
    1. click TOR server > Start
    2(optional) Options > Settings
