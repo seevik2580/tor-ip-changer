@@ -9,7 +9,7 @@
 
 # source code
 - linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
-- windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-windows)
+- windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 
 # i will take no responsibility !!! it is for educational purposes only
 
