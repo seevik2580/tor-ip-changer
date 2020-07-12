@@ -1,6 +1,10 @@
 # tor-ip-changer
 - request new identity every X seconds interval using TOR client
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/seevik2580/tor-ip-changer/graphs/commit-activity)
+[![HitCount](http://hits.dwyl.com/seevik2580/tor-ip-changer.svg)](http://hits.dwyl.com/seevik2580/tor-ip-changer)
+
+
 ##### TOR IP Changer does not override router ip, it just create proxy which is connected inside TOR network which you can use to hide your real ip address for browser or apps that supports socks4/5 type proxy, and you can change that IP inside TOR network every X seconds. For most cases its just for browsers, but you can use third party software to co-operate with TOR IPchanger to anonymize not just browsers but also other apps which does not have support for socks4/5 type proxy or even whole computer with software like Proxifier.`
 
 # binaries: 
