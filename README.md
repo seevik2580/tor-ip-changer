@@ -3,7 +3,7 @@
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/seevik2580/tor-ip-changer/graphs/commit-activity)
 [![HitCount](http://hits.dwyl.com/seevik2580/tor-ip-changer.svg)](http://hits.dwyl.com/seevik2580/tor-ip-changer)
-[![Analytics](https://ga-beacon.appspot.com/UA-172477585-1/seevik2580/tor-ip-changer)](https://github.com/seevik2580/tor-ip-changer)
+[![Analytics](https://ga-beacon.appspot.com/UA-172477585-1/seevik2580/tor-ip-changer)](https://github.com/igrigorik/ga-beacon)
 
 
 
