@@ -10,6 +10,7 @@
 # source code:
 - linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
 - windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
+- mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
 # i will take no responsibility !!! it is for educational purposes only
 
