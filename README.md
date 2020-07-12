@@ -18,7 +18,6 @@
 - windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
-
 # example of usage:
 
 ![](screenshots/1.png)
