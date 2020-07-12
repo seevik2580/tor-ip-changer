@@ -7,7 +7,7 @@
 - windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.5/ipchanger.rar)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental!
 
-# source code
+# source code:
 - linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
 - windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 
