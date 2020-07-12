@@ -3,16 +3,22 @@
 
 ##### TOR IP Changer does not override router ip, it just create proxy which is connected inside TOR network which you can use to hide your real ip address for browser or apps that supports socks4/5 type proxy, and you can change that IP inside TOR network every X seconds. For most cases its just for browsers, but you can use third party software to co-operate with TOR IPchanger to anonymize not just browsers but also other apps which does not have support for socks4/5 type proxy or even whole computer with software like Proxifier.`
 
+# binaries: 
+- windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.5/ipchanger.rar)
+- mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental!
+
+# source code
+- linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
+- windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-windows)
+
+# i will take no responsibility !!! it is for educational purposes only
+
 # example of usage:
-
-
-### i take no responsibility !!! it is for education purposes only
 
 ![](screenshots/1.png)
 
 ![](screenshots/2.png)
 
-# ****************************usage***************************
 ```
    1. click TOR server > Start
    2(optional) Options > Settings
