@@ -1,3 +1,0 @@
-urllib3
-pysocks
-py2exe

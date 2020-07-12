@@ -7,3 +7,12 @@ source-code-linux/1.2.3/build
 source-code-linux/1.2.3/ipchanger.spec
 source-code-linux/1.2.3/nohup.out
 .vscode/settings.json
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/tor-ip-changer.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+source-code-win/1.2.5/tail.exe
+source-code-win/1.2.5/__pycache__/start.cpython-37.pyc
