@@ -1,0 +1,42 @@
+************************************************************
+Changelog: v1.2.6
+************************************************************
+Added:
+    + statusbar at the top for some additional messages
+    + looking for relays for single country 
+    + looking for relays for all countries
+    + app auto update
+    + persistent config inside settings.ini
+    + progressbar2
+    + show location for resolved ip
+    + change ip once for specific port by telnet API:
+            changeip onceport <portNumber>
+    + use bridges by default with option -b
+    + disable updates with option -n
+        
+    + new menu options:
+        TOR server:
+            + restart
+                restart tor.exe
+            + check & repair
+                check for missing or corrupted tor files 
+
+        IP changer:
+            + just once
+                change ip just once
+    
+    + multicountry selection with option -c
+        example: -c cz,us,gb
+            countries need to be separated by comma
+************************************************************
+Removed:
+    - app manual update
+************************************************************
+Changed: 
+    + fixed some bugs
+    + app update mechanism
+    + progress bar
+    + fixed timing bug
+    + show python error messages only if option -d is used
+    + country selection with option -c
+************************************************************

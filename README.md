@@ -10,12 +10,12 @@
 ## i will take no responsibility !!! it is for educational purposes only
 
 # binaries: 
-- windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.5/ipchanger.rar)
+- windows [1.2.6](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.6/ipchanger.rar)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental! tested on El Capitan 10.11.5
 
 # source code:
 - linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
-- windows [1.2.5](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
+- windows [1.2.6](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
 # example of usage:
@@ -41,23 +41,26 @@
    
 # *************************shortcuts**************************
 ```
-  '-a n' automaticaly change ip after start every n
-         example:   ipchanger.exe -a 35
-                    change ip auto every 35 sec
+usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
+    '-a n' automaticaly change ip after start every n
+            example:   ipchanger.exe -a 35
+                        change ip auto every 35 sec
 
-  '-m n' start multiple proxy n instances
-         example:   ipchanger.exe -m 5
-                    start proxy 5 times
-                    with different ports
-                    and generate list
+    '-m n' start multiple proxy n instances
+            example:   ipchanger.exe -m 5
+                        start proxy 5 times
+                        with different ports
+                        and generate list
 
-  '-d' open debug console live log
+    '-d' open debug console live log
 
-  '-s' hide sponsor bar after start
-  
-  '-c {COUNTRYCODE}' select specific country
-  
-  '-p | --publicAPI' bind API to public IP (default localhost only)
+    '-c COUNTRYCODE' select specific country
+    
+    '-p' bind API to public IP
+
+    '-b' use bridges by default
+
+    '-n' disable check for updates
 ```
 
 ![](screenshots/6.png)
@@ -80,6 +83,7 @@
   changeip start    | start autochanging ip
   changeip stop     | stop autochanging ip
   changeip once     | just change once
+  changeip onceport N | just change once for specific port
   exit              | close connection
   *******************************************
 ```  
