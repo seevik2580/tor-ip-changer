@@ -1315,7 +1315,15 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
             if not os.path.exists('libcrypto-1_1.dll'):
                 self.download('https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/libcrypto-1_1.dll')
             time.sleep(1)
-            subprocess.Popen('updater.exe')
+            subprocess.Popen('updater.exe', close_fds=True)
+            SW_HIDE = 0
+            info = subprocess.STARTUPINFO()
+            info.dwFlags = subprocess.STARTF_USESHOWWINDOW
+            info.wShowWindow = SW_HIDE
+            subprocess.Popen(r'taskkill /f /im tor.exe', startupinfo=info)
+            subprocess.Popen(r'taskkill /f /im obfs4proxy.exe', startupinfo=info)
+            subprocess.Popen(r'taskkill /f /im tail.exe', startupinfo=info)
+            os._exit(1)
         except Exception as e:
             self.write("Update error, see logs!\n", "error", 1)
             pass
