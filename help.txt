@@ -1,5 +1,5 @@
 
-source code url: https://github.com/seevik2580/tor-ip-changer/tree/master/source-code
+source code url: https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win
 
 In case of any problems, send logs to toripchanger@gmail.com
 ****************************usage***************************
@@ -10,21 +10,26 @@ In case of any problems, send logs to toripchanger@gmail.com
    4. click IP Changer > Start
    
 ***********************exe shortcuts************************
-  '-a n' automaticaly change ip after start every n
-         example:   ipchanger.exe -a 35
-                    change ip auto every 35 sec
+usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
+    '-a n' automaticaly change ip after start every n
+            example:   ipchanger.exe -a 35
+                        change ip auto every 35 sec
 
-  '-m n' start multiple proxy n instances
-         example:   ipchanger.exe -m 5
-                    start proxy 5 times
-                    with different ports
-                    and generate list
+    '-m n' start multiple proxy n instances
+            example:   ipchanger.exe -m 5
+                        start proxy 5 times
+                        with different ports
+                        and generate list
 
-  '-d' open debug console live log
+    '-d' open debug console live log
 
-  '-s' hide sponsor bar after start
-  
-  '-c {COUNTRYCODE}' select specific country
+    '-c COUNTRYCODE' select specific country
+    
+    '-p' bind API to public IP
+
+    '-b' use bridges by default
+
+    '-n' disable check for updates
 
 *****************************API****************************
   in default settings
@@ -39,6 +44,7 @@ In case of any problems, send logs to toripchanger@gmail.com
   changeip start    | start autochanging ip
   changeip stop     | stop autochanging ip
   changeip once     | just change once
+  changeip onceport N | just change once for specific port
   exit              | close connection
   *******************************************
   API can be used with any language which support telnet
