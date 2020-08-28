@@ -1306,6 +1306,8 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
     def downloadAndUpdate(self):
         try:
             self.download('https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/%s/ipchanger.rar' % self.lastver)
+            if not os.path.exists('UnRAR.exe'):
+                self.download("https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/UnRAR.exe")
             if not os.path.exists('updater.exe'):
                 self.download('https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/updater.exe')
             if not os.path.exists('libssl-1_1.dll'):

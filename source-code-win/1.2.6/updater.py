@@ -49,9 +49,6 @@ try:
         subprocess.Popen(r'taskkill /f /im obfs4proxy.exe', startupinfo=info)
         subprocess.Popen(r'taskkill /f /im tail.exe', startupinfo=info)
         subprocess.Popen(r'taskkill /f /im ipchanger.exe', startupinfo=info)
-        if not os.path.exists('UnRAR.exe'):
-            download("https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/UnRAR.exe")
-            time.sleep(1)
         if os.path.exists('Lib'):
             shutil.rmtree('Lib')
         if os.path.exists('Data'):
