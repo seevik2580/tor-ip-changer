@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 import os
 import urllib.request
-import subprocess, shutil,time, argparse
+import subprocess, shutil, time
 
 def download(url=None, write=None):
     
