@@ -3,15 +3,6 @@ import os
 import urllib.request
 import subprocess, shutil,time, argparse
 
-parser = argparse.ArgumentParser()  
-parser.add_argument("-u", "--update", action='store_true', required=False, help="")
-args = parser.parse_args()
-
-version = "1.2.6"
-
-if args.update is False:
-    os._exit(1)
-    
 def download(url=None, write=None):
     
     file_name = url.split('/')[-1]
