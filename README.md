@@ -61,11 +61,9 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
     '-n' disable check for updates
 ```
 
-![](screenshots/6.png)
+![](screenshots/1.2.6-4.png)
 
-![](screenshots/7.png)
-
-![](screenshots/8.png)
+![](screenshots/1.2.6-5.png)
 
 *****************************API****************************
 ```
