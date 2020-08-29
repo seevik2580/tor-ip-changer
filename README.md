@@ -34,7 +34,6 @@
    5. go to http://checkip.amazonaws.com/ or http://showip.net/ or whenever it shows you IP, and after next period (default 10 seconds) refresh page and if it works, you will always see different IP
 
 ```
-![](screenshots/4.png)
 
 ![](screenshots/5.png)
    
