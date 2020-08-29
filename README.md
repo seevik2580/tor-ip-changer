@@ -19,11 +19,11 @@
 
 # example of usage:
 
-![](screenshots/1.png)
+![](screenshots/1.2.6-1.png)
 
-![](screenshots/2.png)
+![](screenshots/1.2.6-2.png)
 
-![](screenshots/3.png)
+![](screenshots/1.2.6-3.png)
 
 ```
    1. click TOR server > Start
