@@ -862,31 +862,16 @@ class IpChanger(Tk):
           try:  
               self.write('This version:            %s\n' % version, "white", 1)
               http = urllib3.PoolManager()
-              f = http.request('GET', 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/version.txt')
+              f = http.request('GET', 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/lin/version.txt')
               lastver = f.data.decode('utf-8') 
-              url = "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/%s/dist.txt" % lastver
-              u = url.replace("\n", "")
-              linkurl = http.request('GET', u)
-              link = linkurl.data.decode('utf-8') 
-              
-                              
               self.write('Last available version:  %s\n' % lastver, "white", 1)
               v = version.replace(".", "")
               l = lastver.replace(".", "")
               if int(v) >= int(l):
                   self.write('No update required. \n', "white", 1)
               elif int(v) < int(l):
-                  self.write('Update required ! \nDownload: ', "white", 1)
-                  def openHLink(event): 
-                      start, end = t.tag_prevrange("hlink", t.index("@%s,%s" % (event.x, event.y))) 
-                      webbrowser.open(t.get(start, end))
+                  self.write('Update required ! \n', "white", 1)
                   
-                  t = self.output
-                  t.tag_prevrange("hlink", link) 
-                  t.tag_configure("hlink", foreground='blue', underline=1) 
-                  t.tag_bind("hlink", "<Button-1>", openHLink) 
-                  t.insert(END, link, "hlink") 
-                  t.insert(END, "\n")
               _thread.start_new_thread(self.motd, ())
               time.sleep(1)
               if self.buttonup == 0:
