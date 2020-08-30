@@ -160,8 +160,6 @@ class IpChanger(Tk):
 
     '-d' open debug console live log
 
-    '-s' hide sponsor bar after start
-    
     '-c {COUNTRYCODE}' select specific country
     
     '-p | --publicAPI' bind API to public IP (default localhost only)

@@ -2,7 +2,7 @@
 
 ## requirements:
 - linux (ubuntu,debian..)
-- pynev python 3.4.10
+- pynev python 3.4.10+
  
 ## dependency install:
 ### part1 - install curl + libs, authbind, tor, obfs4proxy, meek-client, ssl libs, stop tor service after install and allow to bind port 53 without root permission
@@ -59,8 +59,6 @@ usage: ipchanger [-h] [-a n] [-d] [-m 1-100] [-p] [-c COUNTRY]
 
     '-d' open debug console live log
 
-    '-s' hide sponsor bar after start
-    
     '-c {COUNTRYCODE}' select specific country
     
     '-p | --publicAPI' bind API to public IP (default localhost only)
