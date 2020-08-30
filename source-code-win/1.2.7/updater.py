@@ -53,7 +53,7 @@ class IpChangerUpdater(Tk):
 
     def changelog(self):
         http = urllib3.PoolManager()
-        r = http.request('GET', 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/'+self.lastver+'/changelog')
+        r = http.request('GET', 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/'+self.lastver+'/changelog.txt')
         obsah = r.data.decode('utf-8')
         self.write("%s\n" % obsah,'orange') 
 
