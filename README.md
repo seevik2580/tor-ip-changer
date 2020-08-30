@@ -9,12 +9,13 @@
 ## i will take no responsibility !!! it is for educational purposes only
 
 # binaries: 
-- windows [1.2.6](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.6/ipchanger.rar)
+- windows [1.2.7 exe](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/updater.exe) exe
+- windows [1.2.7 rar](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.7/ipchanger.rar)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental! tested on El Capitan 10.11.5
 
 # source code:
 - linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
-- windows [1.2.6](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
+- windows [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
 # example of usage:
