@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 import subprocess, shutil, time, os, tkinter.ttk, tkinter.scrolledtext, _thread, urllib.request, re, urllib3
+from urllib.request import urlopen
 from tkinter import *
 from pathlib import Path
 
@@ -43,11 +44,11 @@ class IpChangerUpdater(Tk):
         self.lastver = f.data.decode('utf-8') 
 
         try:
-            self.changelog()
+            self.changelog()  
         except:
             pass
         try:
-            self.Update()
+            _thread.start_new_thread(self.Update, ())  
         except:
             pass
 
@@ -74,11 +75,52 @@ class IpChangerUpdater(Tk):
         subprocess.Popen(["ipchanger.exe"],stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False)
         os._exit(1)
 
+    def checkFileSize(self, url=None, write=None, folder=None):
+        file_name = url.split('/')[-1]
+        self.write("Checking %s\n" % file_name, "orange")
+        u = urlopen(url)
+        fo = folder
+        if folder is None:
+            fo = ""
+        else:
+            fo = "%s/" % folder
+        localFile = "%s%s" % (fo,file_name)
+        meta = u.info()
+        totalUrlFileSize = int(meta['Content-Length'])
+        if os.path.exists(localFile):
+            totalLocalFileSize = os.stat(localFile).st_size
+        else:
+            totalLocalFileSize = 0
+        if totalUrlFileSize == totalLocalFileSize:
+            return True
+        else:
+            return False
+    
+    def extract(self):
+        proc = subprocess.Popen(["UnRAR.exe", "x", "-y", "ipchanger.rar"], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+        (out, err) = proc.communicate()
+        for o in out.decode("utf-8").split('\n'):
+            latency = str(o).split('\n')[-1]
+            reg = re.compile('\d{1,3}%')
+            match = reg.search(latency)
+            if (match):
+                self.progressbar["value"] = match.group().rstrip("%")
+            self.write("%s\n" % o, "green")
+
     def Update(self):
         try:
-            http = urllib3.PoolManager()
-            self.download('https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/%s/ipchanger.rar' % self.lastver)
-            self.download("https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/UnRAR.exe")
+            urlipchanger = 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/%s/ipchanger.rar' % self.lastver
+            urlunrar = "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/UnRAR.exe"
+            if os.path.exists("ipchanger.rar"):
+                if self.checkFileSize(urlipchanger) is False:
+                    self.download(urlipchanger)
+            else:
+                self.download(urlipchanger)
+            if os.path.exists("UnRAR.exe"):
+                if self.checkFileSize(urlunrar) is False:
+                    self.download(urlunrar)
+            else:
+                self.download(urlunrar)
             if os.path.exists('ipchanger.rar'):
                 if os.path.exists('UnRAR.exe'):
                     if os.path.exists('Lib'):
@@ -96,17 +138,7 @@ class IpChangerUpdater(Tk):
                     time.sleep(1)       
                     self.progressbar["value"] = 0
                     self.progressbar['style'] = "green.Horizontal.TProgressbar"
-                    
-                    proc = subprocess.Popen(["UnRAR.exe", "x", "-y", "ipchanger.rar"], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
-                    
-                    (out, err) = proc.communicate()
-                    for o in out.decode("utf-8").split('\n'):
-                        latency = str(o).split('\n')[-1]
-                        reg = re.compile('\d{1,3}%')
-                        match = reg.search(latency)
-                        if (match):
-                            self.progressbar["value"] = match.group().rstrip("%")
-                        self.write("%s\n" % o, "green")
+                    self.extract()
                     os.remove('ipchanger.rar')
                     os.remove('UnRAR.exe')
                     
@@ -170,6 +202,7 @@ class IpChangerUpdater(Tk):
             f.close()
         except Exception as e:
             self.write("%s %s" % (url, e), "red")
+            print(e)
 
 if __name__ == '__main__':
     try:
