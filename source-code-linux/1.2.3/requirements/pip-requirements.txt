@@ -1,4 +1,4 @@
 urllib3
 pysocks
-pyinstaller==3.4
+pyinstaller==3.6
 pycurl
