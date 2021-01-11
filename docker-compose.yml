@@ -3,8 +3,6 @@ version: '3.4'
 services:
   tor-ip-changer:
     container_name: tor-ip-changer
-    build:
-      context: .
     image: seevik2580/tor-ip-changer
     privileged: true
     environment:
