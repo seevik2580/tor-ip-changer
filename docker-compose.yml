@@ -1,4 +1,4 @@
-version: '3.4'
+ersion: '3.4'
 
 services:
   tor-ip-changer:
@@ -17,4 +17,4 @@ services:
     ports:
       - "9050:9050"
       - "14999:14999"
-
+    command: "ipchanger -d"
