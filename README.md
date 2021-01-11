@@ -130,15 +130,20 @@ if not changed then default will be downloaded from github
 
 download Dockerfile 
 
-`docker build -t . ipchanger`
-
-`docker run -p 14999:14999 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger`
+```
+docker build -t . ipchanger
+xhost +
+docker run -p 14999:14999 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
+```
 
 **********************DOCKER-COMPOSE************************
 
 download docker-compose.yml
 
-`docker-compose up -d`
+```
+xhost +
+docker-compose up -d
+```
 
 ***********************Country codes************************
 ```
