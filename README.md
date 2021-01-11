@@ -126,6 +126,20 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
 edit Tor/bridges.txt to insert your obfs bridges.
 if not changed then default will be downloaded from github
 
+************************DOCKERFILE**************************  
+
+download Dockerfile 
+
+`docker build -t . ipchanger`
+
+`docker run -p 14999:14999 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger`
+
+**********************DOCKER-COMPOSE************************
+
+download docker-compose.yml
+
+`docker-compose up -d`
+
 ***********************Country codes************************
 ```
 (not all may works)                               
