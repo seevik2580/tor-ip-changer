@@ -137,7 +137,7 @@ download Dockerfile
 ```
 docker build -t . ipchanger
 xhost +
-docker run -p 14999:14999 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
+docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
 ```
 
 **********************DOCKER-COMPOSE************************
