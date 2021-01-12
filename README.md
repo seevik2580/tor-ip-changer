@@ -14,7 +14,7 @@
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental! tested on El Capitan 10.11.5
 
 # source code:
-- linux   [1.2.3](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
+- linux   [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
 - windows [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
@@ -60,6 +60,10 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
     '-b' use bridges by default
 
     '-n' disable check for updates
+
+    '-g | --nogui' run without GUI, control through API
+            to run in background use `nohup ipchanger -g &`
+            for linux version
 ```
 
 ![](screenshots/1.2.6-4.png)
