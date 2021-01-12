@@ -2,7 +2,6 @@ import start, subprocess, os, signal
 
 def ukoncit() :
         os.system(r'killall tor')
-        os.system(r'killall obfs4proxy')
         os.system(r'killall tail')
         os._exit(1)
 
