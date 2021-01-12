@@ -3,7 +3,26 @@
 ## requirements:
 - linux (ubuntu,debian..)
 - pynev python 3.4.10+
- 
+
+************************DOCKERFILE**************************  
+
+download Dockerfile 
+
+```
+docker build -t . ipchanger
+xhost +
+docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
+```
+**********************DOCKER-COMPOSE************************
+
+download docker-compose.yml
+
+```
+xhost +
+docker-compose up -d
+```
+************************************************************
+
 ## dependency install:
 ### part1 - install curl + libs, authbind, tor, obfs4proxy, meek-client, ssl libs, stop tor service after install and allow to bind port 53 without root permission
 - `sudo apt install curl authbind tor obfs4proxy psmisc build-essential`

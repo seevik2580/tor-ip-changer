@@ -18,24 +18,8 @@
 - windows [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
-************************DOCKERFILE**************************  
-
-download Dockerfile 
-
-```
-docker build -t . ipchanger
-xhost +
-docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
-```
-
-**********************DOCKER-COMPOSE************************
-
-download docker-compose.yml
-
-```
-xhost +
-docker-compose up -d
-```
+# Docker-compose:
+- linux   [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/docker-compose.yml)
 
 
 # example of usage:
