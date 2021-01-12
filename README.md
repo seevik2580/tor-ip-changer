@@ -18,6 +18,26 @@
 - windows [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
+************************DOCKERFILE**************************  
+
+download Dockerfile 
+
+```
+docker build -t . ipchanger
+xhost +
+docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
+```
+
+**********************DOCKER-COMPOSE************************
+
+download docker-compose.yml
+
+```
+xhost +
+docker-compose up -d
+```
+
+
 # example of usage:
 
 ![](screenshots/1.2.6-1.png)
@@ -129,25 +149,6 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
 **************************Bridges***************************  
 edit Tor/bridges.txt to insert your obfs bridges.
 if not changed then default will be downloaded from github
-
-************************DOCKERFILE**************************  
-
-download Dockerfile 
-
-```
-docker build -t . ipchanger
-xhost +
-docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
-```
-
-**********************DOCKER-COMPOSE************************
-
-download docker-compose.yml
-
-```
-xhost +
-docker-compose up -d
-```
 
 ***********************Country codes************************
 ```
