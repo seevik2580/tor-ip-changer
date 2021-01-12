@@ -330,8 +330,11 @@ class IpChanger(Tk):
         
     #funkce pro zadost o jednu zmenu ip adresy
     def once(self):
+        self.IPchanged = 1
+        self.IPfetched = 0
         self.newIP()
         self.IPandlatency()
+        
 
     # funkce pro spusteni funkce na zadost o jednu zmenu ip adresy ve vlakne
     def justonce(self):
