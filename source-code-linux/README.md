@@ -4,22 +4,21 @@
 - linux (ubuntu,debian..)
 - pynev python 3.4.10+
 
-************************DOCKERFILE**************************  
-
-download Dockerfile 
-
+## Docker
+ - Dockerfile
 ```
 docker build -t . ipchanger
 xhost +
 docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ipchanger
 ```
-**********************DOCKER-COMPOSE************************
-
-download docker-compose.yml
-
+ - docker-compose
 ```
 xhost +
 docker-compose up -d
+```
+ - docker hub
+```
+docker pull seevik2580/tor-ip-changer
 ```
 ************************************************************
 
