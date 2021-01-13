@@ -5,7 +5,7 @@ RUN svn export https://github.com/seevik2580/tor-ip-changer/trunk/source-code-li
 WORKDIR /app
 RUN cd */ ; dpkg -i requirements/meek-client_0.20+git20151006-1_amd64.deb
 RUN cd */ ; python3 -m pip install -r requirements/pip-requirements.txt
-RUN cd */ ; LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib pyinstaller --onefile ipchanger.py ; ls dist/ipchanger
+RUN cd */ ; LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib pyinstaller --onefile ipchanger.py
 RUN cd */ ; mv dist/ipchanger /bin/ipchanger && rm -fr /app
 RUN apt -y purge git libcurl4-openssl-dev libssl-dev python3-pip x11-apps tk-dev build-essential
 RUN apt -y autoremove
