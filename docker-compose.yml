@@ -4,12 +4,8 @@ services:
   tor-ip-changer:
     container_name: tor-ip-changer
     image: seevik2580/tor-ip-changer
-    privileged: true
     environment:
       - DISPLAY=${DISPLAY:-:0.0}
-    network_mode: "host"
-    cap_add:
-      - ALL
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
     ports:
