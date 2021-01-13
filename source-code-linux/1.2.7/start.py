@@ -309,12 +309,28 @@ class IpChanger(Tk):
             elif not os.path.exists(self.settingsIni):
                     config = configparser.ConfigParser()
                     config['DEFAULT'] = {}
-                    config['DEFAULT']['interval'] = '%s' % int(self.time.get())
-                    config['DEFAULT']['disableupdates'] = 'no'
-                    config['DEFAULT']['auto'] = 'no'
+                    if args.auto is not None:
+                        config['DEFAULT']['interval'] = '%s' % int(args.auto)
+                    else:
+                        config['DEFAULT']['interval'] = '%s' % int(self.time.get())
+                    if args.noupdate is False:
+                        config['DEFAULT']['disableupdates'] = 'no'
+                    else:
+                        config['DEFAULT']['disableupdates'] = 'yes'
+                    if args.auto is not None:
+                        config['DEFAULT']['auto'] = 'yes'
+                    else:
+                        config['DEFAULT']['auto'] = 'no'
                     config['127.0.0.1:9050'] = {}
-                    config['127.0.0.1:9050']['bridge'] = 'no'
-                    config['127.0.0.1:9050']['country'] = '%s' % self.lang_0.get()
+                    if args.bridges is not True:
+                        config['127.0.0.1:9050']['bridge'] = 'no'
+                    else:
+                        config['127.0.0.1:9050']['bridge'] = 'yes'
+                        exec('self.useBridges_0.set("True")')  
+                    if args.country is not None:
+                        config['127.0.0.1:9050']['country'] = '%s' % args.country
+                    else:
+                        config['127.0.0.1:9050']['country'] = '%s' % self.lang_0.get()
                     with open(self.settingsIni, 'w') as configfile:
                         config.write(configfile)        
 
@@ -1287,6 +1303,8 @@ class IpChanger(Tk):
                 _thread.start_new_thread(self.motd, ())
                 time.sleep(1)
                 if self.buttonup == 0:
+                    if args.auto is not None:
+                        self.auto = 1
                     if self.auto == 1: 
                         self.write("Autostart ON, change every %s seconds \n" % int(self.time.get()), "green", 1)     
                         _thread.start_new_thread(self.prestart, ())
