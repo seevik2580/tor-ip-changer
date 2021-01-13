@@ -11,4 +11,4 @@ services:
     ports:
       - "9050:9050"
       - "14999:14999"
-    command: "ipchanger -d"
+    command: "ipchanger"
