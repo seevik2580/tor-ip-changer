@@ -347,6 +347,8 @@ class IpChanger(Tk):
     #funkce pro zadost o jednu zmenu ip adresy
     def once(self):
         self.IPchanged = 1
+        if args.multi is not None:
+            self.IPchanged = args.multi
         self.IPfetched = 0
         self.newIP()
         self.IPandlatency()
@@ -947,6 +949,10 @@ class IpChanger(Tk):
                 elif data == b'changeip once\r\n':
                     if self.bezi == 1:
                         reply = b'changing ip once\r\n'
+                        self.IPchanged = 1
+                        if args.multi is not None:
+                            self.IPchanged = args.multi
+                        self.IPfetched = 0
                         self.newIP()
                         self.IPandlatency()
                     else:
@@ -975,6 +981,10 @@ class IpChanger(Tk):
                     if args.multi is not None:
                         if self.bezi == 1:
                             reply = b'changing ip once for port\r\n'
+                            self.IPchanged = 1
+                            if args.multi is not None:
+                                self.IPchanged = args.multi
+                            self.IPfetched = 0
                             self.newIP(rozdel[2].strip("\r\n"))
                             self.IPandlatency(rozdel[2].strip("\r\n"))
                         else:
@@ -1619,7 +1629,10 @@ class IpChanger(Tk):
         interval = self.time.get()
         while key == self.ident:
             try:
-              self.IPchanged = self.IPchanged + 1
+              if args.multi is not None:
+                  self.IPchanged = self.IPchanged + args.multi
+              else:
+                  self.IPchanged = self.IPchanged + 1
               self.meni=1
               timeout = 0
               interval = self.time.get()
@@ -1665,12 +1678,14 @@ class IpChanger(Tk):
             instanci = int(args.multi)
         else:
             instanci = 1
-        identify = 0
         if port is not None:
             instanci = 1
             proxy = int(port)
             newcontrolport = 15000 - 9050 + int(port)
             self.controlport = int(newcontrolport)
+        identify = proxy - 9050
+        self.debug("identify: %s" % identify)
+        
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
