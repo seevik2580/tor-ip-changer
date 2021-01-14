@@ -6,6 +6,7 @@ services:
     image: seevik2580/tor-ip-changer
     environment:
       - DISPLAY=${DISPLAY:-:0.0}
+    network_mode: "host"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
     ports:
