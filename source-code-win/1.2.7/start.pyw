@@ -14,7 +14,7 @@ urllib3.disable_warnings()
 #verze programku + doplnky
 
 version = "1.2.7"
-build = 2
+build = 3
 
 startchanger = timer()
 directory = "Logs"
@@ -1706,12 +1706,12 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
             instanci = int(args.multi)
         else:
             instanci = 1
-        identify = 0
         if port is not None:
             instanci = 1
             proxy = int(port)
             newcontrolport = 15000 - 9050 + int(port)
             self.controlport = int(newcontrolport)
+        identify = proxy - 9050
         for i in range(instanci):    
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
