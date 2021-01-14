@@ -14,7 +14,7 @@ urllib3.disable_warnings()
 #verze programku + doplnky
 
 version = "1.2.7"
-build = 2
+build = 3
 
 startchanger = timer()
 directory = "Logs"
@@ -770,6 +770,7 @@ class IpChanger(Tk):
             
         
     def updateWindow(self):
+        return
         self.newWindow3 = Toplevel(self)
         self.newWindow3.title("Update")
         
