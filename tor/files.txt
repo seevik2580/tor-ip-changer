@@ -1,10 +1,12 @@
 bridges.txt
 obfs4proxy.exe
+libcrypto-1_1.dll
 libeay32.dll
 libevent-2-1-7.dll
 libevent_core-2-1-7.dll
 libevent_extra-2-1-7.dll
 libgcc_s_sjlj-1.dll
+libssl-1_1.dll
 libssp-0.dll
 ssleay32.dll
 tor.exe
