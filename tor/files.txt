@@ -1,9 +1,9 @@
 bridges.txt
 obfs4proxy.exe
 libeay32.dll
-libevent-2-0-5.dll
-libevent_core-2-0-5.dll
-libevent_extra-2-0-5.dll
+libevent-2-1-7.dll
+libevent_core-2-1-7.dll
+libevent_extra-2-1-7.dll
 libgcc_s_sjlj-1.dll
 libssp-0.dll
 ssleay32.dll
