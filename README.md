@@ -8,6 +8,9 @@
 
 ## i will take no responsibility !!! it is for educational purposes only
 
+## Donation
+- If you find this project interesting, you can send some Bitcoins to address: `1DkStuanmQLC9Xv4UgxbHRzhHqDwABkLfi`
+
 # binaries: 
 - windows [1.2.7 exe](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/updater.exe)
 - windows [1.2.7 rar](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.7/ipchanger.rar)
