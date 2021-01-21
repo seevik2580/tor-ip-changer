@@ -6,10 +6,9 @@ services:
     image: seevik2580/tor-ip-changer
     environment:
       - DISPLAY=${DISPLAY:-:0.0}
-    network_mode: "host"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
     ports:
       - "9050:9050"
-      - "14999:14999"
-    command: "ipchanger"
+      # - "14999:14999"         #uncomment if you need api
+    command: "ipchanger"        #change to "ipchanger -p" if you need api
