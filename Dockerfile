@@ -14,7 +14,7 @@ FROM ubuntu:20.04
 WORKDIR ["/app"]
 COPY --from=builder /usr/bin/ipchanger /usr/bin/ipchanger
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt -y install tor obfs4proxy psmisc python3-tk iputils-ping ca-certificates \
-    && apt -y clean \
-    && rm -rf /var/lib/apt/lists/*
+        && DEBIAN_FRONTEND=noninteractive apt -y install tor obfs4proxy psmisc python3-tk iputils-ping ca-certificates \
+        && apt -y clean \
+        && rm -rf /var/lib/apt/lists/*
 CMD ["ipchanger"]
