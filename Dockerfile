@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt -y install subversion authbind tor obfs4proxy psmisc python3-pip libcurl4-openssl-dev libssl-dev tk-dev python3-tk iputils-ping \
+RUN apt-get update \ 
+        && DEBIAN_FRONTEND=noninteractive apt -y install subversion authbind tor obfs4proxy psmisc python3-pip libcurl4-openssl-dev libssl-dev tk-dev python3-tk iputils-ping \
         && apt -y clean \
         && rm -rf /var/lib/apt/lists/* \
         && svn export https://github.com/seevik2580/tor-ip-changer/trunk/source-code-linux /app \
