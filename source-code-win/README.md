@@ -1,5 +1,5 @@
 ## requirements:
-- windows 7+
+- windows 10+
 - python 3.4.x-3.7.x
  
 ## dependency install:
