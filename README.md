@@ -23,6 +23,7 @@
 
 # Docker-compose:
 - linux   [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/docker-compose.yml)
+- run `xhost +` before starting container
 
 
 # example of usage:
