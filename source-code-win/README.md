@@ -1,7 +1,7 @@
 ## requirements:
 - windows 10
 - python 3.7.x
-- nuitka ()
+- nuitka (https://nuitka.net)
  
 ## dependency install:
 - `pip install -r requirements/pip-requirements.txt`
