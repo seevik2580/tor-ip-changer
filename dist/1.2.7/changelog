@@ -1,7 +1,32 @@
 ************************************************************
+Changelog: v1.2.7-5
+************************************************************
+Fixed:
+    + first start with argument -a now works properly
+    + after first start with argument -a will generate
+      settings.ini with right values
+
+Changed:
+    + ipchanger.exe recompiled with https://nuitka.net
+      instead of Py2exe to remove false positive
+      trojan/malware alerts on virustotal.com
+    + updater.exe was recompiled with https://nuitka.net
+      instead of Py2exe to remove false positive
+      trojan/malware alerts on virustotal.com
+    + ipchanger.exe was changed to one file instead of
+      multiple files
+    + source code merged into one file ipchanger.py instead
+      of two (was ipchanger.py and start.pyw)
+    + proxy list now show even with 1 proxy defined
+
+Removed:
+    - Lib directory
+************************************************************
+
+************************************************************
 Changelog: v1.2.7-4
 ************************************************************
-Changed: 
+Changed:
     + recompiled with python 3.7
 ************************************************************
 
@@ -9,7 +34,7 @@ Changed:
 Changelog: v1.2.7-3
 ************************************************************
 Changed:
-    + fixed changeip onceport
+    + API fixed changeip onceport
 ************************************************************
 
 ************************************************************
