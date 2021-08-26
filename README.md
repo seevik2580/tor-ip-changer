@@ -12,8 +12,8 @@
 - If you find this project interesting, you can send some Bitcoins to address: `1DkStuanmQLC9Xv4UgxbHRzhHqDwABkLfi`
 
 # binaries: 
-- windows [1.2.7 exe](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/updater.exe)
-- windows [1.2.7 rar](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.7/ipchanger.rar)
+- windows [1.2.7 exe](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/updater.exe) | [virustotal.com](https://www.virustotal.com/gui/file/1c8039d46508d48ce5edc1c7137a022962053f0b05450c4fe87a7321d3bafbf6/detection)
+- windows [1.2.7 rar](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.7/ipchanger.rar) | [virustotal.com](https://www.virustotal.com/gui/file/be0e4b637b3aa9b282516cc43cd2fa0dbf3c143686eab42a83bd7abef180c5ba/detection)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental! tested on El Capitan 10.11.5
 
 # source code:
