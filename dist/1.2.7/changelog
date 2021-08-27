@@ -1,4 +1,15 @@
 ************************************************************
+Changelog: v1.2.7-6
+************************************************************
+Try to fix:
+    + false positive trojan alerts
+      https://www.virustotal.com/gui/file/8fbaf6ba7718c589b9f9f002ff56f47f456cb8a645f73ad60280e39ebe78c217/detection
+
+Changed:
+    + recompiled with py2exe==0.10.2.0
+************************************************************
+
+************************************************************
 Changelog: v1.2.7-5
 ************************************************************
 Fixed:
@@ -13,14 +24,10 @@ Changed:
     + updater.exe was recompiled with https://nuitka.net
       instead of Py2exe to remove false positive
       trojan/malware alerts on virustotal.com
-    + ipchanger.exe was changed to one file instead of
-      multiple files
     + source code merged into one file ipchanger.py instead
       of two (was ipchanger.py and start.pyw)
     + proxy list now show even with 1 proxy defined
 
-Removed:
-    - Lib directory
 ************************************************************
 
 ************************************************************
@@ -38,13 +45,13 @@ Changed:
 ************************************************************
 
 ************************************************************
-Changelog: v1.2.7-2
+Changelog: v1.2.7-1+v1.2.7-2
 ************************************************************
 Added:
     + build number for microupdates
     + app auto update gui
 ************************************************************
-Changed: 
+Changed:
     + app update mechanism
     + fixed bugs with updater
 ************************************************************

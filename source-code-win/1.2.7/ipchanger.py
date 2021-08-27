@@ -15,7 +15,7 @@ urllib3.disable_warnings()
 # verze programku + doplnky
 
 version = "1.2.7"
-build = 5
+build = 6
 
 startchanger = timer()
 directory = "Logs"

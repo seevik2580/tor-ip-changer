@@ -1,5 +1,4 @@
 urllib3
 pysocks
-nuitka
+py2exe==0.10.2.0
 pycurl
-zstandard
