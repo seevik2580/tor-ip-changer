@@ -89,7 +89,9 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
   help              | print usage
   tor start         | start tor server
   tor stop          | stop tor server
-  interval N        | set interval to N
+  interval N        | set interval to N seconds
+  blacklist N       | set blacklist for N seconds
+  uniqueip port N   | set On/Off to obtain unique ip for port
   changeip start    | start autochanging ip
   changeip stop     | stop autochanging ip
   changeip once     | just change once
