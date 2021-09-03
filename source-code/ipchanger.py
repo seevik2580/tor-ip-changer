@@ -1413,7 +1413,6 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
                     reply += b'tor stop       | stop tor server\r\n'
                     reply += b'interval N     | set interval to N seconds\r\n'
                     reply += b'blacklist N    | set blacklist to N seconds\r\n'
-                    reply += b'whitelist N    | set specific ip address to whitelist\r\n'
                     reply += b'changeip start | start autochanging ip\r\n'
                     reply += b'changeip stop  | stop autochanging ip\r\n'
                     reply += b'changeip once  | dont autochange, but change once\r\n'
