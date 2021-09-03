@@ -1,7 +1,6 @@
 FROM ubuntu:20.04 AS builder
 RUN apt-get update \
         && DEBIAN_FRONTEND=noninteractive apt -y install subversion libsqlite3-dev python3-pip libcurl4-openssl-dev libssl-dev tk-dev python3-tk \
-        && mkdir -p /app \
         && svn export https://github.com/seevik2580/tor-ip-changer/trunk/source-code /app \
         && dpkg -i /app/requirements/linux/meek-client_0.20+git20151006-1_amd64.deb \
         && python3 -m pip install -r /app/requirements/linux/pip-requirements.txt \
