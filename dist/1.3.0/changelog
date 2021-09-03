@@ -1,0 +1,35 @@
+************************************************************
+Changelog: v1.3.0-7
+************************************************************
+Added:
+    + option to always obtain unique ip for single proxy
+            Options > Settings
+    + option to always obtain unique ip for multi proxy
+            Options > Settings  (with ipchanger -m)
+    + API uniqueip port N (N=port number)
+      set On/Off to obtain unique ip for proxy
+    + API blacklist N (N=seconds)
+      set blacklist ip for N seconds
+    + blacklist.db inside Data/tordata/
+    + Options > Settings > Blacklist GUI for specific proxy
+    + torrc inside Data/tordata/
+    + blacklist time inside settings.ini
+    + option to set blacklist only for session
+    + number of all exitNodes in status bar
+    + number of exitNodes for specific country in console
+    + duplicated message check and postpone to prevent spam
+      to console
+    + if single proxy deplete all ips it will postpone next
+      change until new set of ips are available
+    + if multi proxy deplete all ip it will postpone next
+      change until new set of ips are available
+
+Changed:
+    + resolving ip with retry attempts if failed
+    + Options > Settings GUI
+    + Help > About GUI
+    + settings.ini
+    + python script multiplatform (windows and linux)
+    + error reporting in console and logfiles
+
+************************************************************

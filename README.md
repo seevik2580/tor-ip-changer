@@ -12,27 +12,26 @@
 - If you find this project interesting, you can send some Bitcoins to address: `1DkStuanmQLC9Xv4UgxbHRzhHqDwABkLfi`
 
 # binaries: 
-- windows [1.2.7 exe](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/updater.exe) | [virustotal.com](https://www.virustotal.com/gui/file/1c8039d46508d48ce5edc1c7137a022962053f0b05450c4fe87a7321d3bafbf6/detection)
-- windows [1.2.7 rar](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.2.7/ipchanger.rar) | [virustotal.com](https://www.virustotal.com/gui/file/8fbaf6ba7718c589b9f9f002ff56f47f456cb8a645f73ad60280e39ebe78c217/detection)
-- mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) !experimental! tested on El Capitan 10.11.5
+- windows [1.3.0 exe](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/updater.exe) | [virustotal.com](https://www.virustotal.com/gui/file/1c8039d46508d48ce5edc1c7137a022962053f0b05450c4fe87a7321d3bafbf6/detection)
+- windows [1.3.0 rar](https://github.com/seevik2580/tor-ip-changer/raw/master/dist/1.3.0/ipchanger.rar) | [virustotal.com](https://www.virustotal.com/gui/file/98f66fb9f638714237079fd62748cba704fa7a6e3bf01b2d8d74cdbb85fa6fd1/detection)
+- mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/raw/master/mac/dist/1.0.0/IPchanger.dmg) ! discontinued, experimental ! tested on El Capitan 10.11.5
 
 # source code:
-- linux   [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-linux)
-- windows [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win)
+- windows / linux   [1.3.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code)
 - mac     [1.0.0](https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-mac)
 
 # Docker-compose:
-- linux   [1.2.7](https://github.com/seevik2580/tor-ip-changer/tree/master/docker-compose.yml)
+- windows / linux   [1.3.0](https://github.com/seevik2580/tor-ip-changer/tree/master/docker-compose.yml)
 - run `xhost +` before starting container
 
 
 # example of usage:
 
-![](screenshots/1.2.6-1.png)
+![](screenshots/1.3.0-1.png)
 
-![](screenshots/1.2.6-2.png)
+![](screenshots/1.3.0-2.png)
 
-![](screenshots/1.2.6-3.png)
+![](screenshots/1.3.0-3.png)
 
 ```
    1. click TOR server > Start
@@ -48,7 +47,7 @@
    
 # *************************shortcuts**************************
 ```
-usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
+usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
     '-a n' automaticaly change ip after start every n
             example:   ipchanger.exe -a 35
                         change ip auto every 35 sec
@@ -69,14 +68,16 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n]
 
     '-n' disable check for updates
 
+    '-u' always obtain unique ip
+
     '-g | --nogui' run without GUI, control through API
             to run in background use `nohup ipchanger -g &`
             for linux version
 ```
 
-![](screenshots/1.2.6-4.png)
+![](screenshots/1.3.0-4.png)
 
-![](screenshots/1.2.6-5.png)
+![](screenshots/1.3.0-5.png)
 
 *****************************API****************************
 ```

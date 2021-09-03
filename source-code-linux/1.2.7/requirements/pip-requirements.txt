@@ -1,4 +1,0 @@
-urllib3
-pysocks
-pyinstaller
-pycurl

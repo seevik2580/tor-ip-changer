@@ -1,4 +1,0 @@
-urllib3
-pysocks
-py2exe==0.10.2.0
-pycurl
