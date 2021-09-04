@@ -22,7 +22,7 @@
 
 # Docker
 - windows / linux   [1.3.0](https://github.com/seevik2580/tor-ip-changer/blob/master/Dockerfile)
-- [hub.docker.com](https://hub.docker.com/repository/docker/seevik2580/tor-ip-changer)
+- [hub.docker.com](https://hub.docker.com/r/seevik2580/tor-ip-changer)
 - run `xhost +` before starting container
 - `docker run -p 14999:14999 -p 9050:9050 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix seevik2580/tor-ip-changer`
 
