@@ -11,7 +11,6 @@ or
 - `pip install urllib3`
 - `pip install pysocks`
 - `pip install py2exe==0.10.2.0`
-- `pip install pycurl`
 
 ## binaries:
 - to build binaries for windows use command:`python setup-ipchanger-windows.py`
@@ -74,7 +73,6 @@ or
 - `pip install urllib3`
 - `pip install pysocks`
 - `pip install pyinstaller`
-- `pip install pycurl`
 
 ### run tor-ip-changer with python
 - `python ipchanger.py`
