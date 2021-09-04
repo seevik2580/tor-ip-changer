@@ -2,6 +2,7 @@
 source code url: https://github.com/seevik2580/tor-ip-changer/tree/master/source-code-win
 
 In case of any problems, send logs to toripchanger@gmail.com
+or create issue at https://github.com/seevik2580/tor-ip-changer/issues
 ****************************usage***************************
    1. click TOR server > Start
    2(optional) Options > Settings
