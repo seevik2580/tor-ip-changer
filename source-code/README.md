@@ -3,8 +3,15 @@
 - windows 10
 - python 3.7.x
 
-## dependency install:
+## requirements install with:
 - `pip install -r requirements/windows/pip-requirements.txt`
+
+or
+
+- `pip install urllib3`
+- `pip install pysocks`
+- `pip install py2exe==0.10.2.0`
+- `pip install pycurl`
 
 ## binaries:
 - to build binaries for windows use command:`python setup-ipchanger-windows.py`
@@ -59,7 +66,15 @@ eval "$(pyenv virtualenv-init -)"
 - `env LDFLAGS=-L~/usr/lib/openssl-1.0 CFLAGS="-DOPENSSL_NO_SSL3 -I/usr/include/openssl-1.0" PYTHON_CONFIGURE_OPTS="--enable-shared" ~/.pyenv/bin/pyenv install 3.7.7`
 - `pyenv global 3.7.7`
 - `sudo apt install libcurl4-openssl-dev libssl-dev`
+
+install requirements with
 - `python -m pip install -r requirements/linux/pip-requirements.txt`
+
+or
+- `pip install urllib3`
+- `pip install pysocks`
+- `pip install pyinstaller`
+- `pip install pycurl`
 
 ### run tor-ip-changer with python
 - `python ipchanger.py`
