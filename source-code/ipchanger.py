@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 # import vsech potrebnych modulu
-import sys, tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, logging, os, argparse, urllib3, string, json, urllib.request, configparser, subprocess, sqlite3, webbrowser, re
+import sys, tkinter.ttk, random, _thread, time, tkinter.scrolledtext, socket, logging, os, argparse, urllib3, string, json, urllib.request, configparser, subprocess, sqlite3, webbrowser, re, ssl
 
 if sys.platform == "win32":
     windows = True
@@ -28,7 +28,7 @@ urllib3.disable_warnings()
 
 # verze programku a cislo buildu
 version = "1.3.0"
-build = 7
+build = 8
 
 startchanger = timer()
 directory = "Logs"
@@ -508,7 +508,7 @@ class IpChanger(Tk):
             torfiles = "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/files.txt"
             tordir = "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/"
 
-            http = urllib3.PoolManager()
+            http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
             r = http.request('GET', torfiles)
             obsah = r.data.decode('utf-8')
             self.file = ""
@@ -557,7 +557,7 @@ class IpChanger(Tk):
             for c in country.replace(",", " ").split():
                 url = "https://onionoo.torproject.org/summary?search=country:%s" % str(c)
                 exit = "https://onionoo.torproject.org/summary?search=country:%s%%20flag:exit" % str(c)
-                http = urllib3.PoolManager()
+                http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
                 r = http.request('GET', url)
                 r2 = http.request('GET', exit)
                 obsah = r.data.decode('utf-8')
@@ -605,7 +605,7 @@ class IpChanger(Tk):
                         try:
                             url = "https://onionoo.torproject.org/summary"
                             exit = "https://onionoo.torproject.org/summary?search=flag:exit"
-                            http = urllib3.PoolManager()
+                            http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
                             r = http.request('GET', url)
                             r2 = http.request('GET', exit)
                             obsah = r.data.decode('utf-8')
@@ -666,7 +666,7 @@ class IpChanger(Tk):
                 bridges = "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/tor/bridges.txt"
 
                 if windows:
-                    http = urllib3.PoolManager()
+                    http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
                     r = http.request('GET', torfiles)
                     obsah = r.data.decode('utf-8')
                     self.file = ""
@@ -1304,14 +1304,14 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
 
     # funkce na zobrazeni zpravy dne
     def motd(self):
-        http = urllib3.PoolManager()
+        http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
         r = http.request('GET', 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/motd.txt')
         obsah = r.data.decode('utf-8')
         self.write(obsah, 'white', 1)
 
     # funkce na zobrazeni changelogu verze aplikace
     def changelog(self):
-        http = urllib3.PoolManager()
+        http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
         r = http.request('GET',
                          'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/' + version + '/changelog')
         obsah = r.data.decode('utf-8')
@@ -1921,7 +1921,7 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
         try:
             if self.noUpdate is False:
                 self.write('This version:            %s-%s\n' % (version, build), "white", 1)
-                http = urllib3.PoolManager()
+                http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
                 f = http.request('GET', 'https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/version.txt')
                 self.lastver = f.data.decode('utf-8')
                 url = "https://raw.githubusercontent.com/seevik2580/tor-ip-changer/master/dist/%s/dist.txt" % self.lastver
@@ -1976,7 +1976,10 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
     def checkFileSize(self, url=None, write=None, folder=None):
         from urllib.request import urlopen
         file_name = url.split('/')[-1]
-        u = urlopen(url)
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        u = urlopen(url, context=ctx)
         fo = folder
         if folder is None:
             fo = ""
@@ -2008,8 +2011,10 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
                     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
                 }
             )
-
-            u = urllib.request.urlopen(req)
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            u = urllib.request.urlopen(req, context=ctx)
             fo = folder
             if folder is None:
                 fo = ""
@@ -2256,7 +2261,7 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
             cc = 0
             for c in country.replace(",", " ").split():
                 url = "https://onionoo.torproject.org/summary?search=country:%s%%20flag:exit" % str(c)
-                http = urllib3.PoolManager()
+                http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
                 r = http.request('GET', url)
                 obsah = r.data.decode('utf-8')
                 jsonobsah = json.loads(obsah)
@@ -2266,7 +2271,7 @@ usage: ipchanger.exe [-a AUTO] [-d] [-m 1-100] [-p] [-c COUNTRY] [-b] [-n] [-u]
             return pocet
         else:
             url = "https://onionoo.torproject.org/summary?search=flag:exit"
-            http = urllib3.PoolManager()
+            http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
             r = http.request('GET', url)
             obsah = r.data.decode('utf-8')
             jsonobsah = json.loads(obsah)

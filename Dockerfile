@@ -1,7 +1,7 @@
 FROM ubuntu:20.04 AS builder
+COPY source-code /app
 RUN apt-get update \
-        && DEBIAN_FRONTEND=noninteractive apt -y install subversion libsqlite3-dev python3-pip libcurl4-openssl-dev libssl-dev tk-dev python3-tk \
-        && svn export https://github.com/seevik2580/tor-ip-changer/trunk/source-code /app \
+        && DEBIAN_FRONTEND=noninteractive apt -y install libsqlite3-dev python3-pip libcurl4-openssl-dev libssl-dev tk-dev python3-tk \
         && python3 -m pip install -r /app/requirements/linux/pip-requirements.txt \
         && sed -i 's/authbind \-\-deep//g' /app/ipchanger.py \
         && LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib pyinstaller --onefile /app/ipchanger.py \
