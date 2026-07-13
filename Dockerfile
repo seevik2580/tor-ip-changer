@@ -17,6 +17,6 @@ RUN apt-get update \
         && rm -f /app/meek-client_0.20+git20151006-1_amd64.deb \
         && apt -y clean \
         && rm -rf /var/lib/apt/lists/*
-COPY Tor/geoip /app/Tor
-COPY Tor/geoip6 /app/Tor        
+COPY tor/geoip /app/Tor
+COPY tor/geoip6 /app/Tor        
 CMD ["ipchanger"]
