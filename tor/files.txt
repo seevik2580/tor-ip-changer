@@ -1,4 +1,6 @@
 bridges.txt
+geoip
+geoip6
 obfs4proxy.exe
 libcrypto-1_1.dll
 libeay32.dll
